@@ -774,3 +774,107 @@ img{max-width:100%;height:auto}
   .cab-form,.cab-zap,.ham{width:40px!important;min-width:40px!important}
   .marca img{max-width:50vw;height:38px}
 }
+
+/* ================================================================
+   AJUSTES FINAIS — SERVIDÃO ADMINISTRATIVA / CONVERSÃO 2026
+   Leitura mais compacta, alinhamento editorial e modal desktop.
+   ================================================================ */
+
+/* Texto: coluna confortável e justificação editorial */
+.corpo p,
+.corpo li,
+.sec-cab p,
+.dest-txt p,
+.faq details p,
+.caixa p,
+.cta p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+.corpo p { margin-bottom: .82rem; }
+.corpo h2 { margin-top: 2.15rem; margin-bottom: .72rem; }
+.corpo h2:first-child { margin-top: 0; }
+.corpo ul { margin: .55rem 0 1.15rem; padding-left: 1.2rem; }
+.corpo li { margin-bottom: .35rem; line-height: 1.58; }
+
+/* Menos espaço vazio entre blocos, mantendo sensação premium. */
+.sec { padding-block: clamp(52px, 6.2vw, 82px); }
+.sec-cab { margin-bottom: clamp(24px, 3vw, 34px); }
+.hero-in { padding-top: clamp(58px, 7.5vw, 88px); padding-bottom: clamp(54px, 7vw, 82px); }
+.hero { min-height: min(680px, calc(100svh - 78px)); }
+.hero-sub { margin-bottom: 1.45rem; }
+.hero-nota { margin-top: 1.65rem; padding-top: 1.15rem; }
+
+/* Hero: fotografia da nova referência, mais nítida e bem posicionada. */
+.hero-fig img {
+  object-position: center center;
+  opacity: .34;
+  filter: saturate(.78) contrast(1.04);
+}
+
+/* Ações: mesmo tamanho, mesma altura e alinhamento consistente. */
+.hero-btns,
+.cta-btns,
+.cab-actions { align-items: stretch; }
+.hero-btns .btn,
+.cta-btns .btn { min-height: 50px; }
+.hero-btns .btn { min-width: 205px; }
+
+/* Seção de contato sem segundo formulário duplicado. */
+#contato .contato-compacto {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  padding: 28px 30px;
+  background: #fff;
+  border: 1px solid #e1e4e1;
+  border-radius: 16px;
+  box-shadow: 0 12px 34px rgba(15,23,42,.055);
+}
+#contato .contato-compacto p { margin-bottom: 0; }
+#contato .contato-compacto .lead { margin-top: .35rem; }
+#contato .contato-compacto .btn { min-width: 230px; }
+
+/* Modal no PC: mais compacto, centralizado e com campos bem alinhados. */
+.form-modal { padding: 24px; }
+.form-modal-card {
+  width: min(820px, 100%);
+  max-height: min(88dvh, 820px);
+  border-radius: 18px;
+  box-shadow: 0 28px 80px rgba(0,0,0,.24);
+}
+.form-modal-head { padding: 22px 26px 14px; }
+.form-modal-body { padding: 18px 26px 24px; }
+.form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 14px; }
+.form-modal .campo label { margin-bottom: 5px; }
+.form-modal .campo input,
+.form-modal .campo select { min-height: 48px; padding: 11px 13px; }
+.form-modal .campo textarea { min-height: 104px; }
+.form-modal-submit { min-height: 50px; }
+
+@media (min-width: 701px) {
+  .corpo p,
+  .corpo li,
+  .sec-cab p,
+  .dest-txt p,
+  .faq details p,
+  .caixa p,
+  .cta p { text-align: justify; }
+}
+
+@media (max-width: 700px) {
+  .sec { padding-block: 50px; }
+  .hero-in { padding-top: 52px; padding-bottom: 52px; }
+  .hero-btns .btn { min-width: 0; }
+  #contato .contato-compacto {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 22px 20px;
+  }
+  #contato .contato-compacto .btn { width: 100%; }
+  .form-modal { padding: 7px; }
+  .form-modal-card { max-height: 97dvh; }
+}
