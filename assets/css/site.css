@@ -417,3 +417,64 @@ img,svg,video,table{max-width:100%}
   .cta p,.rod-aviso,.lead,.area p,.dir p,.hero-sub,.passo p{
     text-align:left;hyphens:auto;-webkit-hyphens:auto}
 }
+
+/* ================================================================
+   V8 — LISTA EDITORIAL DE ÁREAS (seção 3.1 do brief)
+   ================================================================ */
+.areas{display:grid;grid-template-columns:1fr 1fr;column-gap:52px;border-top:1px solid var(--line)}
+.area{display:grid;grid-template-columns:42px minmax(0,1fr) 22px;column-gap:18px;
+  align-items:baseline;min-height:0;padding:22px 0;text-decoration:none;
+  border-bottom:1px solid var(--line);transition:padding-left .18s ease,background-color .18s ease}
+.area:hover{padding-left:8px;background-color:rgba(155,119,64,.045)}
+.area-n{font-family:"Libre Baskerville",Georgia,serif;color:var(--bronze);
+  font-size:.74rem;letter-spacing:.04em}
+.area-txt{min-width:0}
+.area h3{color:var(--ink);font-size:1.04rem;line-height:1.28;margin:0 0 5px;letter-spacing:-.012em}
+.area p{font-size:.845rem;line-height:1.6;color:var(--muted);margin:0;max-width:46ch;
+  text-align:left;hyphens:auto;-webkit-hyphens:auto}
+.area-seta{color:var(--bronze);font-size:.95rem;line-height:1;opacity:0;
+  transform:translateX(-4px);transition:opacity .18s ease,transform .18s ease;align-self:center}
+.area:hover .area-seta,.area:focus-visible .area-seta{opacity:1;transform:translateX(0)}
+@media(max-width:900px){
+  .areas{grid-template-columns:1fr;column-gap:0}
+}
+@media(max-width:560px){
+  .area{grid-template-columns:32px minmax(0,1fr) 18px;column-gap:13px;padding:19px 0}
+  .area h3{font-size:.99rem}
+  .area p{font-size:.825rem}
+  .area-seta{opacity:1;transform:none}   /* sem hover no toque: seta sempre visível */
+}
+
+/* ================================================================
+   V9 — HERO MOBILE: conformidade com a regra de 640px (seção 4)
+   Medição anterior: áreas começavam em y=797px @390px. Alvo: <640px.
+   ================================================================ */
+@media(max-width:560px){
+  .hero-fig,.hero-int .hero-fig{height:172px}
+  .hero-inner,.hero-int-inner{padding-block:26px 30px}
+  .hero h1{font-size:1.72rem;line-height:1.16;margin-bottom:14px}
+  .hero-sub{font-size:.92rem;line-height:1.62;margin-bottom:20px}
+  .hero-btns{gap:10px 16px;margin-top:4px}
+  .hero-btns .btn{min-height:46px}
+  /* link terciário sai do hero no mobile: as áreas já vêm logo abaixo */
+  .hero-btns .btn-areas{display:none}
+}
+@media(max-width:430px){
+  .hero-fig,.hero-int .hero-fig{height:150px}
+  .hero h1{font-size:1.6rem}
+  .hero-inner,.hero-int-inner{padding-block:22px 26px}
+}
+
+/* V9.1 — ajuste final para cumprir os 640px (medido: 686px) */
+@media(max-width:560px){
+  .hero-fig,.hero-int .hero-fig{height:140px}
+  .hero-inner,.hero-int-inner{padding-block:22px 26px}
+  .hero h1{font-size:1.62rem;margin-bottom:12px}
+  .hero-sub{font-size:.9rem;line-height:1.58;margin-bottom:17px}
+  .hero-btns .btn{min-height:44px}
+  .hero .rotulo{margin-bottom:9px;font-size:.62rem}
+}
+@media(max-width:430px){
+  .hero-fig,.hero-int .hero-fig{height:124px}
+  .hero h1{font-size:1.54rem}
+}
