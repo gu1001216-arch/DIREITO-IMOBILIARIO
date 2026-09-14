@@ -180,7 +180,18 @@
     formulario(form);
   }
 
+  function navegacaoAtiva() {
+    var atual = location.pathname.replace(/\\/g, "/").replace(/\/$/, "") || "/";
+    document.querySelectorAll(".nav-d a").forEach(function (a) {
+      try {
+        var destino = new URL(a.href, location.href).pathname.replace(/\\/g, "/").replace(/\/$/, "") || "/";
+        if (destino === atual) a.classList.add("is-active");
+      } catch (e) {}
+    });
+  }
+
   function iniciar() {
+    navegacaoAtiva();
     menu();
     rastrear();
     document.querySelectorAll("form.form").forEach(function (f) {

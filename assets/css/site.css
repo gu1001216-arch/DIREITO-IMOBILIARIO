@@ -878,3 +878,220 @@ img{max-width:100%;height:auto}
   .form-modal { padding: 7px; }
   .form-modal-card { max-height: 97dvh; }
 }
+
+/* Ajustes finais — leitura mobile e apresentação da fotografia da obra */
+.hero-sub{
+  text-align:justify;
+  text-align-last:left;
+  hyphens:auto;
+  overflow-wrap:break-word;
+  margin-inline:0 auto;
+}
+
+@media(max-width:700px){
+  .hero-sub{
+    max-width:34rem;
+    margin-inline:auto;
+    line-height:1.72;
+    text-align:justify;
+    text-align-last:left;
+    hyphens:auto;
+    -webkit-hyphens:auto;
+    overflow-wrap:break-word;
+  }
+}
+
+/* ================================================================
+   DIREÇÃO VISUAL — ADVOCACIA PREMIUM / SEM ESTÉTICA GENÉRICA
+   Botões e navegação com acabamento editorial, institucional e sóbrio.
+   ================================================================ */
+
+/* Base dos botões: menos "app", mais escritório de advocacia. */
+.btn{
+  border-radius:4px;
+  min-height:46px;
+  padding:12px 20px;
+  font-size:.86rem;
+  font-weight:600;
+  letter-spacing:.01em;
+  box-shadow:none;
+  transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.btn::after{display:none!important}
+.btn-mar{
+  background:#111a2a;
+  border:1px solid #111a2a;
+  color:#fff;
+}
+.btn-mar:hover{
+  background:#1c2a40;
+  border-color:#1c2a40;
+  transform:translateY(-1px);
+  box-shadow:0 7px 18px rgba(17,26,42,.16);
+}
+.btn-lin{
+  background:#fff;
+  border:1px solid #bfc4c2;
+  color:#182132;
+}
+.btn-lin:hover{
+  background:#fafaf8;
+  border-color:#8f9590;
+  color:#182132;
+  transform:translateY(-1px);
+  box-shadow:0 5px 15px rgba(17,26,42,.06);
+}
+.btn-zap{
+  background:#177747;
+  border:1px solid #177747;
+  color:#fff;
+}
+.btn-zap:hover{
+  background:#12643b;
+  border-color:#12643b;
+  transform:translateY(-1px);
+  box-shadow:0 7px 18px rgba(23,119,71,.15);
+}
+.btn-claro{
+  background:transparent;
+  border:1px solid rgba(255,255,255,.42);
+  color:#fff;
+}
+.btn-claro:hover{
+  background:rgba(255,255,255,.06);
+  border-color:rgba(255,255,255,.72);
+  color:#fff;
+}
+
+/* Ações principais: detalhe tipográfico em vez de efeitos chamativos. */
+.hero-btns .btn-mar::before,
+.cta-btns .btn-mar::before,
+.form-modal-submit::after{
+  content:"→";
+  margin-right:8px;
+  font-size:1rem;
+  line-height:0;
+}
+.hero-btns .btn-zap::before,
+.cta-btns .btn-zap::before{
+  content:"";
+  width:15px;
+  height:15px;
+  display:inline-block;
+  background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.2 1.6 6L.2 24l6.3-1.7c1.7.9 3.6 1.4 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4ZM12.1 21.6c-1.8 0-3.6-.5-5.1-1.3l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.3C2.2 6.3 6.6 1.9 12.1 1.9c2.7 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1-.1 5.4-4.5 9.7-10 9.7Zm5.4-7.3c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.5-.7-2.5-1.2-3.5-2.7-.3-.5.3-.5.8-1.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.3 3.6 5.6 5 .8.3 1.4.5 1.9.6.8.3 1.5.2 2 .1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.2-.6-.4Z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+/* Header desktop: hierarquia clara e navegação com acabamento fino. */
+.cab{
+  background:rgba(248,248,247,.97);
+  box-shadow:0 1px 0 rgba(16,24,39,.04),0 8px 24px rgba(16,24,39,.035);
+}
+.cab-in{height:80px;gap:26px}
+.nav-d>ul{gap:25px}
+.nav-d a{
+  position:relative;
+  padding:29px 0 27px;
+  border:0;
+  color:#3f4752;
+  font-size:.82rem;
+  font-weight:600;
+}
+.nav-d a::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:18px;
+  height:1px;
+  background:#b08a43;
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .2s ease;
+}
+.nav-d a:hover,
+.nav-d a.is-active{color:#101827}
+.nav-d a:hover::before,
+.nav-d a.is-active::before{transform:scaleX(1)}
+.tem-sub>a::after{margin-left:8px;vertical-align:2px}
+
+/* Mega-menu: aparência de menu institucional, não de componente de template. */
+.mega{
+  top:calc(100% + 1px);
+  padding:25px 28px 27px;
+  gap:30px;
+  min-width:760px;
+  border:1px solid #dedfdb;
+  border-top:2px solid #b08a43;
+  border-radius:0 0 4px 4px;
+  box-shadow:0 18px 38px rgba(16,24,39,.12);
+}
+.mega h5{margin-bottom:12px;color:#9b773b;font-size:.62rem}
+.mega li{margin-bottom:3px}
+.mega a{padding:6px 0;font-size:.81rem;font-weight:500;color:#4b535d}
+.mega a::before{display:none}
+.mega a:hover{color:#111a2a}
+
+/* Botões do cabeçalho: discretos e proporcionais ao logo. */
+.cab-actions{gap:9px}
+.cab-actions .btn{min-height:42px;padding:10px 16px;font-size:.78rem}
+.cab-form{background:#111a2a}
+.cab-zap{background:#177747}
+
+/* Menu mobile: gaveta com identidade própria e separadores editoriais. */
+.ham{
+  width:44px;height:44px;border-radius:4px;
+  border:1px solid #c6cac7;
+  background:#fff;
+  box-shadow:none;
+}
+.ham:hover{border-color:#9fa49f;background:#fafaf8}
+.ham span,.ham span::before,.ham span::after{width:18px;height:1.5px;background:#182132}
+.gaveta{
+  width:min(92vw,410px);
+  background:#111a2a;
+  padding:24px 30px 36px;
+  box-shadow:-18px 0 45px rgba(0,0,0,.18);
+}
+.gaveta-top{padding-bottom:15px;margin-bottom:4px;border-bottom:1px solid rgba(255,255,255,.11)}
+.gaveta-fechar{width:38px;height:38px;border-radius:4px;font-size:1.2rem;border-color:rgba(255,255,255,.22)}
+.gaveta h5{
+  position:relative;
+  padding-top:18px;
+  margin:4px 0 5px;
+  color:#c5a059;
+  font-size:.61rem;
+}
+.gaveta h5::before{content:"";position:absolute;top:0;left:0;width:24px;height:1px;background:#c5a059}
+.gaveta li{border-bottom:1px solid rgba(255,255,255,.075)}
+.gaveta a{padding:10px 0;color:#e5e8ec;font-size:.88rem}
+.gaveta a:hover{color:#fff}
+.gaveta .btn{border-radius:4px;margin-top:18px;min-height:46px}
+.gaveta .btn-zap{margin-top:8px}
+
+/* Menu mobile não deve virar um conjunto de pílulas. */
+@media(max-width:1079px){
+  .cab-in{height:72px}
+  .cab-actions .btn{min-height:42px}
+}
+@media(max-width:700px){
+  .cab-in{height:68px;gap:8px}
+  .marca img{height:41px;max-width:48vw}
+  .cab-actions{gap:5px}
+  .cab-actions .btn{border-radius:4px;min-height:40px;height:40px}
+  .cab-form{width:40px!important;min-width:40px!important;padding:0!important;font-size:0!important}
+  .cab-form::before{
+    content:"";display:block;width:16px;height:16px;background:currentColor;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+  .cab-zap{width:40px!important;min-width:40px!important;padding:0!important;font-size:0!important}
+  .cab-zap::before{content:"WA";font-size:9px;font-weight:700;letter-spacing:.04em;color:#fff;transform:none}
+  .ham{width:40px;height:40px;border-radius:4px}
+  .hero-btns .btn,.cta-btns .btn{min-height:49px}
+}
+
+/* Modal: acabamento consistente com a nova linguagem visual. */
+.form-modal-card{border-radius:6px;box-shadow:0 26px 70px rgba(0,0,0,.24)}
+.form-modal-close{border-radius:4px}
+.form-modal .campo input,.form-modal .campo select,.form-modal .campo textarea{border-radius:4px}
+.form-modal-submit{border-radius:4px}
