@@ -133,10 +133,60 @@
     });
   }
 
+
+  /* ── Formulário rápido: disponível no topo, menu e hero ── */
+  function modalContato() {
+    var modal = document.getElementById("formModal"),
+      form = document.getElementById("formModalContato");
+    if (!modal || !form) return;
+
+    function abrir(origem) {
+      modal.hidden = false;
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("form-opened");
+      ev("formulario_aberto", { origem: origem || "site" });
+      setTimeout(function () {
+        var primeiro = form.querySelector("input");
+        if (primeiro) primeiro.focus();
+      }, 40);
+    }
+    function fechar() {
+      modal.hidden = true;
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("form-opened");
+    }
+
+    document.querySelectorAll("[data-open-form]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        var gav = document.getElementById("gaveta"), veu = document.getElementById("veu");
+        if (gav) gav.classList.remove("on");
+        if (veu) { veu.classList.remove("on"); setTimeout(function(){ veu.hidden = true; }, 180); }
+        var menuBtn = document.getElementById("btnMenu");
+        if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+        abrir(el.dataset.openForm);
+      });
+    });
+    document.querySelectorAll("[data-close-form]").forEach(function (el) {
+      el.addEventListener("click", fechar);
+    });
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) fechar();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.hidden) fechar();
+    });
+
+    formulario(form);
+  }
+
   function iniciar() {
     menu();
     rastrear();
-    document.querySelectorAll("form.form").forEach(formulario);
+    document.querySelectorAll("form.form").forEach(function (f) {
+      if (f.id !== "formModalContato") formulario(f);
+    });
+    modalContato();
   }
   document.readyState === "loading"
     ? document.addEventListener("DOMContentLoaded", iniciar)
