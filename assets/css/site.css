@@ -184,7 +184,7 @@ p{margin:0 0 18px;max-width:72ch}
 .rod-marca img{width:215px;height:auto;margin-bottom:18px}.rod h5{font-size:.61rem;letter-spacing:.15em;text-transform:uppercase;color:var(--bronze-light);margin:0 0 13px}.rod ul{list-style:none;padding:0;margin:0}.rod li{margin-bottom:7px}.rod a{text-decoration:none;color:#adb5b6;font-size:.75rem}.rod a:hover{color:#fff}.rod-aviso{max-width:900px;color:#858e90;font-size:.68rem;line-height:1.65;margin:23px 0}.rod-base{display:flex;justify-content:space-between;gap:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);color:#747d7f;font-size:.65rem}
 
 /* FLOATING CONTACT */
-.zap-flut{position:fixed;right:22px;bottom:22px;z-index:50;width:50px;height:50px;display:flex;align-items:center;justify-content:center;background:var(--green);border:1px solid rgba(255,255,255,.65);border-radius:50%;box-shadow:0 8px 22px rgba(0,0,0,.15);transition:transform .2s ease,background .2s ease}.zap-flut:hover{transform:translateY(-2px);background:#174d35}.zap-flut svg{width:21px;height:21px;fill:#fff}
+.zap-flut{position:fixed;right:22px;bottom:22px;z-index:50;display:inline-flex;align-items:center;gap:9px;padding:11px 16px;background:var(--charcoal);color:#fff;border:1px solid var(--charcoal);border-radius:2px;text-decoration:none;font-size:.7rem;font-weight:600;letter-spacing:.055em;text-transform:uppercase;line-height:1;transition:background-color .2s ease,color .2s ease,border-color .2s ease}.zap-flut:hover{background:#fff;color:var(--charcoal);border-color:var(--charcoal)}.zap-flut svg{width:16px;height:16px;flex:none;stroke:var(--bronze-light);transition:stroke .2s ease}.zap-flut:hover svg{stroke:var(--bronze)}
 
 /* MODAL */
 .form-modal{position:fixed;inset:0;z-index:120;background:rgba(10,14,16,.72);display:flex;align-items:center;justify-content:center;padding:22px;overflow:auto}.form-modal[hidden]{display:none}
@@ -208,7 +208,7 @@ p{margin:0 0 18px;max-width:72ch}
   .hero-fig,.hero-int .hero-fig{min-height:520px}.hero-in,.hero-int .hero-in{padding:74px 17px 62px;background:linear-gradient(90deg,rgba(21,25,27,.97) 0%,rgba(21,25,27,.86) 64%,rgba(21,25,27,.46) 100%)}
   .hero h1{margin-bottom:20px}.hero-sub{font-size:.95rem;line-height:1.78}.hero-btns,.cta-btns{align-items:flex-start;gap:13px 20px}.hero-btns .btn-mar{width:auto}.hero-btns .btn-claro,.hero-btns .btn-zap{width:auto}.sec{padding:66px 0}.sec-cab{margin-bottom:31px}
   .areas{grid-template-columns:1fr}.area,.area:nth-child(even),.area:nth-child(odd){grid-template-columns:43px 1fr auto;padding:22px 0;border-right:0}.area:hover,.area:nth-child(even):hover{padding-left:5px}.area p{font-size:.8rem}.area-mais{font-size:.58rem}.dirs{grid-template-columns:1fr}.dir:nth-child(odd){border-right:0}.dest{gap:27px}.dest-fig::before{inset:9px}.dest-lista{margin-bottom:22px}
-  .form{grid-template-columns:1fr;gap:15px}.campo-full,.form-regra,.form-aviso{grid-column:auto}.form .btn{width:100%}#contato .contato-compacto{grid-template-columns:1fr;gap:21px}#contato .contato-compacto .btn{justify-self:start}.rel a{flex:1 1 100%}.cta{padding:64px 0}.cta-btns .btn{width:auto}.rod{padding-top:50px}.rod-grade{grid-template-columns:1fr 1fr;gap:28px}.rod-marca{grid-column:1/-1}.rod-base{flex-direction:column;gap:7px}.zap-flut{width:48px;height:48px;right:15px;bottom:15px}.form-modal{padding:8px}.form-modal-card{max-height:96dvh}.form-modal-head{padding:23px 20px 16px}.form-modal-body{padding:5px 20px 24px}.form-modal .form{margin-top:8px}
+  .form{grid-template-columns:1fr;gap:15px}.campo-full,.form-regra,.form-aviso{grid-column:auto}.form .btn{width:100%}#contato .contato-compacto{grid-template-columns:1fr;gap:21px}#contato .contato-compacto .btn{justify-self:start}.rel a{flex:1 1 100%}.cta{padding:64px 0}.cta-btns .btn{width:auto}.rod{padding-top:50px}.rod-grade{grid-template-columns:1fr 1fr;gap:28px}.rod-marca{grid-column:1/-1}.rod-base{flex-direction:column;gap:7px}.zap-flut{right:15px;bottom:15px;padding:11px 13px}.zap-flut span{display:none}.form-modal{padding:8px}.form-modal-card{max-height:96dvh}.form-modal-head{padding:23px 20px 16px}.form-modal-body{padding:5px 20px 24px}.form-modal .form{margin-top:8px}
 }
 @media(max-width:430px){.marca img{max-width:64vw}.gaveta{padding-inline:23px}.rod-grade{grid-template-columns:1fr}.rod-marca{grid-column:auto}.mega{display:none}.hero-btns{flex-direction:column;align-items:flex-start}.hero-btns .btn-mar{width:100%;justify-content:center}.cta-btns{flex-direction:column;align-items:flex-start}.cta-btns .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
@@ -379,4 +379,41 @@ body{background:var(--paper);color:var(--ink);font-family:"DM Sans",system-ui,-a
   .hero-btns .btn-mar{max-width:none}
   .cta-btns{align-items:flex-start}
   .cta-btns .btn{width:100%}
+}
+
+/* ================================================================
+   V7 — CORREÇÕES DE AUDITORIA
+   Hero mobile proporcional + overflow + ritmo vertical
+   ================================================================ */
+
+/* Hero mobile: imagem deixa de ocupar a tela inteira.
+   O visitante alcança "Áreas de atuação" no primeiro scroll. */
+@media(max-width:900px){
+  .hero,.hero-int{min-height:0}
+  .hero-fig,.hero-int .hero-fig{min-height:0;height:300px}
+  .hero-inner,.hero-int-inner{padding-block:40px 44px}
+}
+@media(max-width:700px){
+  .hero-fig,.hero-int .hero-fig{height:260px}
+  .hero-inner,.hero-int-inner{padding-block:34px 40px}
+  .sec{padding:56px 0}
+}
+@media(max-width:430px){
+  .hero-fig,.hero-int .hero-fig{height:216px}
+  .sec{padding:52px 0}
+}
+
+/* Blindagem contra overflow horizontal em qualquer viewport */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,table{max-width:100%}
+.env{padding-inline:0}
+@supports not (width:min(1px,1px)){
+  .env{width:auto;margin-inline:22px}
+}
+
+/* Justificação: desativa em telas estreitas, onde gera rios de espaço */
+@media(max-width:560px){
+  .corpo p,.corpo li,.faq details p,.caixa p,.sec-cab p,.dest-txt p,
+  .cta p,.rod-aviso,.lead,.area p,.dir p,.hero-sub,.passo p{
+    text-align:left;hyphens:auto;-webkit-hyphens:auto}
 }
