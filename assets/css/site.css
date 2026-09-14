@@ -647,3 +647,130 @@ body{font-size:16px;line-height:1.65;background:var(--paper)}
   .cab-zap{font-size:0!important;width:40px;padding:0!important}
   .cab-zap::before{content:"WA";display:block!important;font-size:10px;font-weight:700;transform:none}
 }
+
+
+/* ================================================================
+   REFINO FINAL 2026 — MOBILE FIRST / LEITURA / CONVERSÃO
+   ================================================================ */
+
+/* Fotografia limpa: sem molduras ou linhas douradas sobre imagens */
+.dest-fig::after,
+.dest-fig-retrato::after{display:none!important;content:none!important}
+.dest-fig,.dest-fig-retrato{border:0!important}
+.dest-fig img,.dest-fig-retrato img{filter:none;image-rendering:auto}
+
+/* Botões modernos, discretos e fáceis de identificar */
+.btn{border-radius:10px;min-height:50px;padding:13px 21px;font-weight:600;letter-spacing:0;box-shadow:0 6px 18px rgba(16,24,39,.07)}
+.btn::after{display:none}
+.btn-mar{background:#101827;border-color:#101827;color:#fff}
+.btn-mar:hover{background:#1b2a42;border-color:#1b2a42;transform:translateY(-1px);box-shadow:0 10px 24px rgba(16,24,39,.14)}
+.btn-lin{background:#fff;border-color:#d5dad7;color:#101827}
+.btn-lin:hover{background:#f7f8f6;border-color:#a9b0aa;transform:translateY(-1px)}
+.btn-zap{background:#168a4b;border-color:#168a4b;color:#fff}
+.btn-zap:hover{background:#11743f;border-color:#11743f;transform:translateY(-1px)}
+.btn-claro{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.05);color:#fff}
+.btn-claro:hover{background:#fff;color:#101827;border-color:#fff}
+
+/* Header: mais leve e com hierarquia clara */
+.cab{background:rgba(255,255,255,.94);border-bottom:1px solid #e7e9e6;box-shadow:0 6px 24px rgba(16,24,39,.045)}
+.cab-in{height:78px}
+.marca img{height:50px}
+.nav-d a{color:#3d4652;font-weight:500}
+.nav-d a:hover{color:#101827;border-bottom-color:#b08a43}
+.cab-actions{gap:8px}
+.cab-form{background:#101827!important;color:#fff!important;border-color:#101827!important}
+.cab-form:hover{background:#1b2a42!important}
+.cab-zap{background:#168a4b!important;color:#fff!important;border-color:#168a4b!important}
+.cab-zap:hover{background:#11743f!important;border-color:#11743f!important}
+.ham{border-radius:10px;background:#fff;border-color:#d8ddd9}
+.ham span,.ham span::before,.ham span::after{background:#101827}
+
+/* Menu mobile: claro, profissional e orientado à ação */
+.gaveta{background:#fff;color:#172033;box-shadow:-18px 0 50px rgba(7,15,27,.18);padding:22px 24px 34px}
+.gaveta-top{margin-bottom:10px}
+.gaveta-fechar{border-color:#dce1de;background:#fff;color:#172033;border-radius:10px}
+.gaveta h5{color:#927035;margin-top:22px}
+.gaveta li{border-bottom:1px solid #edf0ed}
+.gaveta a{color:#283241;padding:13px 0}
+.gaveta a:hover{color:#101827}
+.gaveta .btn{margin-top:16px}
+.gaveta .btn-claro{background:#101827;color:#fff;border-color:#101827}
+.gaveta .btn-zap{margin-top:10px}
+
+/* Hero mais limpo e humano */
+.hero{min-height:min(760px,calc(100svh - 78px))}
+.hero-fig img{filter:saturate(.72) contrast(1.02);opacity:.38}
+.hero::after{background:linear-gradient(90deg,rgba(8,15,27,.98) 0%,rgba(8,15,27,.91) 46%,rgba(8,15,27,.48) 100%)}
+.hero h1{letter-spacing:-.04em}
+.hero-sub{max-width:59ch}
+
+/* Conteúdo: sem hifenização automática */
+body,p,h1,h2,h3,h4,h5,h6,li,a,button,input,select,textarea{hyphens:none;-webkit-hyphens:none}
+
+/* Melhor leitura em telas grandes */
+.corpo p,.sec-cab p,.dest-txt p,.faq details p{max-width:70ch}
+
+/* Imagens responsivas e nítidas */
+img{max-width:100%;height:auto}
+
+@media(max-width:700px){
+  body{font-size:16px;line-height:1.68}
+  .cab-in{height:68px;padding-inline:14px;gap:8px}
+  .marca{flex:1;min-width:0}
+  .marca img{height:40px;max-width:54vw}
+  .cab-actions{gap:6px}
+  .cab-actions .btn{min-height:42px;height:42px}
+  .cab-form,.cab-zap{width:42px!important;min-width:42px!important;height:42px!important;padding:0!important;border-radius:10px!important;font-size:0!important;display:inline-flex!important;align-items:center;justify-content:center}
+  .cab-form::before{content:"";display:block;width:17px;height:17px;background:currentColor;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z'/%3E%3C/svg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z'/%3E%3C/svg%3E") center/contain no-repeat}
+  .cab-zap::before{content:"WA";display:block;font-size:10px;font-weight:800;letter-spacing:-.02em;line-height:1;color:#fff}
+  .ham{width:42px;height:42px;border-radius:10px}
+
+  .hero{min-height:0}
+  .hero-fig img{opacity:.28;object-position:60% center}
+  .hero::after{background:linear-gradient(180deg,rgba(8,15,27,.90) 0%,rgba(8,15,27,.86) 55%,rgba(8,15,27,.92) 100%)}
+  .hero-in{padding-top:60px;padding-bottom:58px}
+  .hero h1{font-size:clamp(2.15rem,10.6vw,3.2rem);line-height:1.05;max-width:14ch}
+  .hero-sub{font-size:1rem;line-height:1.7;margin-top:1.1rem}
+  .hero-btns{gap:10px}
+  .hero-btns .btn{width:100%;min-height:52px}
+
+  /* Texto justificado no celular, sem hifenização automática */
+  .corpo p,
+  .sec-cab p,
+  .dest-txt p,
+  .faq details p,
+  .cta p,
+  .caixa p{text-align:justify;text-justify:inter-word;hyphens:none;-webkit-hyphens:none;overflow-wrap:break-word}
+  .corpo li{hyphens:none;-webkit-hyphens:none}
+
+  /* Menos decoração, mais clareza */
+  .area,.dir{border-radius:12px}
+  .dest-fig,.dest-fig-retrato{box-shadow:0 12px 30px rgba(15,23,42,.10)}
+  .dest-fig::after,.dest-fig-retrato::after{display:none!important}
+
+  /* Formulário mais confortável no celular */
+  .form-modal{padding:7px}
+  .form-modal-card{width:100%;max-height:97dvh;border-radius:18px}
+  .form-modal-head{padding:18px 16px 10px}
+  .form-modal-body{padding:14px 16px 20px}
+  .form-modal-head h2{font-size:1.7rem;line-height:1.1}
+  .form-modal-head p{font-size:.86rem}
+  .form-modal .campo input,.form-modal .campo select,.form-modal .campo textarea{font-size:16px;min-height:52px;border-radius:10px}
+  .form-modal .campo textarea{min-height:120px}
+  .form-modal-submit{min-height:54px}
+}
+
+@media(min-width:701px){
+  .corpo p,.sec-cab p,.dest-txt p,.faq details p{text-align:left}
+}
+
+@media(min-width:1080px){
+  .cab-in{height:82px}
+  .marca img{height:50px}
+  .cab-form,.cab-zap{min-height:44px;padding-inline:17px}
+}
+
+@media(max-width:370px){
+  .cab-form,.cab-zap,.ham{width:40px!important;min-width:40px!important}
+  .marca img{max-width:50vw;height:38px}
+}
