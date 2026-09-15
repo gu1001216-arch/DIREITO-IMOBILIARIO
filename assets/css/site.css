@@ -478,3 +478,166 @@ img,svg,video,table{max-width:100%}
   .hero-fig,.hero-int .hero-fig{height:124px}
   .hero h1{font-size:1.54rem}
 }
+
+/* ================================================================
+   V10 — CORREÇÕES: WhatsApp flutuante, hero PC, canais, OAB
+   ================================================================ */
+
+/* --- BUG PC: caixa 46px fixa quebrava o texto verticalmente --- */
+.zap-flut{
+  width:auto !important; height:auto !important;
+  display:inline-flex; align-items:center; gap:9px;
+  padding:12px 16px; right:22px; bottom:22px;
+  background:var(--charcoal); border:1px solid var(--charcoal); border-radius:3px;
+  color:#fff; text-decoration:none; white-space:nowrap; max-width:none;
+  font-size:.7rem; font-weight:600; letter-spacing:.055em; text-transform:uppercase;
+  line-height:1; box-shadow:0 10px 26px rgba(0,0,0,.16);
+}
+.zap-flut:hover{background:#fff;color:var(--charcoal);border-color:var(--charcoal)}
+.zap-flut svg{width:16px;height:16px;flex:none;stroke:var(--bronze-light);fill:none}
+.zap-flut:hover svg{stroke:var(--bronze)}
+.zap-flut span{display:inline;white-space:nowrap}
+@media(max-width:560px){
+  .zap-flut{padding:12px 13px;right:15px;bottom:15px}
+  .zap-flut span{display:none}          /* só o ícone no celular */
+}
+
+/* --- Canal explícito no rótulo do CTA --- */
+.cta-canal{font-weight:400;opacity:.72;text-transform:none;letter-spacing:.01em;font-size:.94em}
+
+/* --- OAB institucional no Sobre --- */
+.oab-linha{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--bronze);margin:-4px 0 18px;text-align:left}
+
+/* --- HERO: foto no mobile, frentes do escritório no PC --- */
+.hero-frentes{display:none}
+@media(min-width:901px){
+  .hero-fig{display:none}                       /* sai a foto no PC */
+  .hero{grid-template-columns:1.02fr .98fr;min-height:0}
+  .hero-frentes{
+    display:block;align-self:stretch;
+    padding:clamp(34px,3.4vw,52px) clamp(26px,3vw,46px);
+    border-left:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.028)}
+  .hf-cab{font-size:.66rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
+    color:var(--bronze-light);margin:0 0 16px;text-align:left}
+  .hero-frentes ul{list-style:none;margin:0;padding:0;
+    display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
+  .hero-frentes li{border-top:1px solid rgba(255,255,255,.1)}
+  .hero-frentes a{display:grid;grid-template-columns:26px minmax(0,1fr) 14px;
+    align-items:center;column-gap:10px;padding:10px 0;text-decoration:none;
+    color:#e8e6e0;font-size:.855rem;line-height:1.3;
+    transition:color .18s ease,padding-left .18s ease}
+  .hero-frentes a:hover{color:#fff;padding-left:5px}
+  .hf-n{font-family:"Libre Baskerville",Georgia,serif;font-size:.68rem;color:var(--bronze-light)}
+  .hf-s{color:var(--bronze-light);opacity:0;transform:translateX(-3px);
+    transition:opacity .18s ease,transform .18s ease;font-size:.85rem}
+  .hero-frentes a:hover .hf-s{opacity:1;transform:translateX(0)}
+}
+@media(min-width:1280px){
+  .hero-frentes a{font-size:.9rem;padding:11px 0}
+}
+
+/* ================================================================
+   V11 — WHATSAPP DE CONVERSÃO: maior e visível em todas as telas
+   ================================================================ */
+.zap-flut{
+  right:24px; bottom:24px;
+  padding:17px 24px;
+  font-size:.82rem; letter-spacing:.06em; gap:11px;
+  border-radius:4px;
+  background:#1f5a40; border:1px solid #1f5a40; color:#fff;
+  box-shadow:0 14px 34px rgba(31,90,64,.34);
+}
+.zap-flut:hover{background:#17482f;border-color:#17482f;color:#fff;
+  box-shadow:0 18px 40px rgba(31,90,64,.42);transform:translateY(-2px)}
+.zap-flut svg{width:21px;height:21px;stroke:#fff}
+.zap-flut:hover svg{stroke:#fff}
+.zap-flut span{display:inline}
+
+/* No celular o rótulo continua visível — é onde converte mais */
+@media(max-width:560px){
+  .zap-flut{right:14px;bottom:14px;padding:15px 20px;font-size:.78rem;gap:9px}
+  .zap-flut span{display:inline}
+  .zap-flut svg{width:19px;height:19px}
+}
+/* Telas muito estreitas: encurta o rótulo em vez de sumir */
+@media(max-width:400px){
+  .zap-flut{padding:14px 17px;font-size:.74rem}
+  .zap-flut .zap-longo{display:none}
+}
+
+/* V11.1 — correções apontadas pela validação real (Chromium) */
+
+/* Em 390px o rótulo virava só "FALAR" — sem sentido. Mantém a frase completa. */
+@media(max-width:400px){
+  .zap-flut .zap-longo{display:inline}
+  .zap-flut{padding:14px 18px;font-size:.75rem}
+}
+@media(max-width:339px){
+  .zap-flut .zap-longo{display:none}   /* só em telas realmente minúsculas */
+}
+
+/* Alvos de toque: mínimo 44px (medidos 40–43px) */
+.gaveta a{padding:13px 0;min-height:44px;display:flex;align-items:center}
+.gaveta-fechar{width:44px;height:44px}
+.ham{width:46px;height:46px}
+.mega a{min-height:44px;display:flex;align-items:center}
+
+/* ================================================================
+   V12 — TIPOGRAFIA: justificado sem hífen, sem rios de espaço
+   ================================================================ */
+
+/* Hifenização desligada em todo o site. Travessões permanecem. */
+html, body, p, li, h1, h2, h3, h4, .lead, .hero-sub,
+.corpo p, .corpo li, .area p, .dir p, .dest-txt p, .caixa p,
+.faq details p, .sec-cab p, .cta p, .rod-aviso, .passo p{
+  hyphens:none; -webkit-hyphens:none; -ms-hyphens:none;
+}
+
+/* Justificado só onde a coluna é larga o bastante para não abrir espaços.
+   Abaixo de 860px o texto fica à esquerda: justificar em coluna estreita
+   sem hifenização produz rios de espaço em branco. */
+.corpo p, .corpo li, .dest-txt p, .caixa p, .faq details p,
+.sec-cab p, .cta p, .lead, .rod-aviso{
+  text-align:left;
+  text-wrap:pretty;              /* evita palavra órfã na última linha */
+  overflow-wrap:break-word;
+  word-break:normal;
+}
+@media(min-width:860px){
+  .corpo p, .corpo li, .dest-txt p, .caixa p, .faq details p, .sec-cab p{
+    text-align:justify;
+    text-align-last:left;
+    word-spacing:-.008em;        /* compensa o alargamento da justificação */
+  }
+}
+
+/* Descrições curtas nunca justificam — a coluna é curta demais */
+.area p, .dir p, .passo p, .hero-sub, .oab-linha{
+  text-align:left !important; text-wrap:pretty;
+}
+
+/* Hero do Sobre sem foto: mantém o marinho e o respiro correto */
+.hero-sem-foto{display:block;min-height:0}
+.hero-sem-foto .hero-in{padding-block:clamp(38px,5vw,64px) clamp(34px,4.4vw,56px)}
+.hero-sem-foto::after{display:none}
+
+/* V12.1 — justificação medida pela COLUNA, não pelo viewport.
+   O bloco do Sobre tem ~593px mesmo em tela de 1280px: justificar ali
+   abre espaços visíveis entre as palavras. */
+.dest-txt p, .dest-txt li{
+  text-align:left !important;
+  text-align-last:left;
+  text-wrap:pretty;
+}
+
+/* Onde houver suporte a container queries, a decisão passa a ser exata:
+   justifica só a partir de 680px de largura REAL do bloco de leitura. */
+@supports (container-type: inline-size){
+  .corpo{container-type:inline-size}
+  .corpo p, .corpo li{text-align:left}
+  @container (min-width: 680px){
+    .corpo p, .corpo li{text-align:justify;text-align-last:left;word-spacing:-.008em}
+  }
+}
