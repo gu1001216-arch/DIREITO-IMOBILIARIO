@@ -641,3 +641,64 @@ html, body, p, li, h1, h2, h3, h4, .lead, .hero-sub,
     .corpo p, .corpo li{text-align:justify;text-align-last:left;word-spacing:-.008em}
   }
 }
+
+/* ================================================================
+   V13 — LINHAS NAS FOTOS, HERO PC SEM VÃO, WHATSAPP MAIOR
+   ================================================================ */
+
+/* 1) Remove a moldura branca de 1px desenhada sobre TODAS as fotos */
+.dest-fig::before,
+.sc-fig::before,
+.faixa-fig::before{ display:none !important; content:none !important; }
+.dest-fig,.sc-fig{border:0}
+
+/* 2) HERO NO PC: painel alinhado ao topo, sem vão morto embaixo */
+@media(min-width:901px){
+  .hero{align-items:start}
+  .hero-in{padding-block:clamp(52px,5vw,78px) clamp(52px,5vw,78px)}
+  .hero-frentes{
+    align-self:start;
+    padding:clamp(50px,4.6vw,76px) clamp(30px,3.2vw,50px) clamp(40px,4vw,60px);
+    background:rgba(255,255,255,.035);
+    border-left:1px solid rgba(255,255,255,.12)}
+  .hero-frentes ul{column-gap:34px}
+  .hero-frentes a{padding:12px 0;font-size:.9rem}
+  .hero-frentes li{border-top-color:rgba(255,255,255,.12)}
+  /* dois CTAs lado a lado, mesma linha de base */
+  .hero-btns{align-items:center;gap:14px 30px}
+}
+
+/* 3) WHATSAPP maior e sem quebra, em qualquer tela */
+.zap-flut{
+  padding:19px 28px !important;
+  font-size:.86rem !important;
+  gap:12px !important;
+  border-radius:4px !important;
+  white-space:nowrap !important;
+  width:auto !important; height:auto !important; max-width:none !important;
+  line-height:1 !important;
+  box-shadow:0 16px 38px rgba(31,90,64,.38) !important;
+}
+.zap-flut svg{width:23px !important;height:23px !important;flex:none}
+.zap-flut span{display:inline !important;white-space:nowrap !important}
+@media(max-width:560px){
+  .zap-flut{padding:17px 22px !important;font-size:.8rem !important;
+            right:13px !important;bottom:13px !important}
+  .zap-flut svg{width:21px !important;height:21px !important}
+}
+@media(max-width:339px){ .zap-flut .zap-longo{display:none} }
+
+/* V13.1 — rótulos nunca justificam (eram <p> e caíam na regra de .sec-cab p) */
+.rotulo,.hf-cab,.oab-linha,.dir-a,.area-n,.hf-n{
+  text-align:left !important;
+  text-align-last:left !important;
+  word-spacing:normal !important;
+  white-space:nowrap;
+}
+@media(max-width:520px){ .rotulo{white-space:normal} }
+
+/* V13.2 — painel do hero ocupa a coluna inteira: fim da faixa cortada */
+@media(min-width:901px){
+  .hero{align-items:stretch}
+  .hero-frentes{align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+}
