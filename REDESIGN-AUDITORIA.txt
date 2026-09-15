@@ -1,0 +1,42 @@
+VACCARI ADVOCACIA — REDESIGN V14
+
+IMPLEMENTADO
+- Homepage reconstruída com foco em Google Ads → identificação do problema → WhatsApp.
+- Hero redesenhado com Direito Imobiliário em destaque e CTA principal para WhatsApp.
+- Principais Frentes reduzidas para 4: Usucapião, Regularização de imóveis, Contratos imobiliários e Posse e propriedade.
+- Removida a duplicidade entre resumo e lista completa de áreas.
+- Criada seção "Qual é a situação do seu imóvel?" como direcionador de conversão.
+- Criada seção completa de Áreas de Atuação com fotos reais já existentes no projeto e links para as páginas internas.
+- Criada apresentação profissional do advogado com foto existente.
+- Criado fluxo "Como funciona" em 4 etapas.
+- FAQ mantido em accordion.
+- CTAs intermediário e final priorizando WhatsApp.
+- WhatsApp flutuante transformado em botão circular, grande e sem texto, com ícone SVG.
+- Header desktop/mobile simplificado e CTA de WhatsApp destacado.
+- Palhoça removida dos textos institucionais e dados estruturados; atuação apresentada para todo o Estado de Santa Catarina.
+- Formulário existente preservado, sem backend fictício.
+- URLs/páginas internas preservadas.
+- CSS recebeu camada V14 de redesign, mobile-first, acessibilidade e microinterações.
+- Respeitado prefers-reduced-motion e proteção contra overflow horizontal.
+- Imagens existentes em WebP foram preservadas; hero carrega a imagem principal e demais imagens usam lazy loading.
+
+INVENTÁRIO VISUAL UTILIZADO
+- Usucapião → usucapiao.webp
+- Regularização → regularizacao.webp
+- Adjudicação → adjudicacao.webp
+- Contratos → contratos.webp
+- Posse/propriedade → posse.webp
+- Imóveis rurais → rurais.webp
+- Registro de imóveis → regularizacao.webp (imagem registral/documental existente mais coerente)
+- Desapropriação → obra-rodovia.webp
+- Servidão administrativa → linha-transmissao.webp
+- Litígios imobiliários → posse.webp (imagem existente coerente com conflito possessório)
+- Compra e venda → contratos.webp
+- Parcelamento do solo → posse.webp (imagem de área/terreno existente)
+
+AUDITORIA TÉCNICA
+- Links locais da homepage verificados contra as páginas presentes no projeto: sem links locais quebrados.
+- 12 áreas internas preservadas.
+- Política de privacidade preservada.
+- CNAME, sitemap, robots e .nojekyll preservados.
+- Número/link de WhatsApp existente no projeto foi mantido.
