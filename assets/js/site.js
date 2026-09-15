@@ -1,205 +1,224 @@
-/* Vaccari Advocacia — comportamento compartilhado */
+/* Vaccari Advocacia — comportamento compartilhado
+   Menu lateral, mega menu, modal de contato, envio do formulário e eventos GA4. */
 (function () {
   "use strict";
 
-  /* ── Gaveta mobile ── */
-  function menu() {
-    var btn = document.getElementById("btnMenu"),
-      gav = document.getElementById("gaveta"),
-      veu = document.getElementById("veu");
-    if (!btn || !gav || !veu) return;
-    function abrir() {
-      gav.classList.add("on"); veu.hidden = false;
-      requestAnimationFrame(function () { veu.classList.add("on"); });
-      btn.setAttribute("aria-expanded", "true");
-      document.body.style.overflow = "hidden";
+  var DESTINO = ["gustavoparisvaccari", "gmail.com"].join("@");
+  var ENDPOINT = "https://formsubmit.co/ajax/" + DESTINO;
+
+  /* ── Eventos de conversão ── */
+  function ev(nome, dados) {
+    var d = Object.assign({ pagina: location.pathname }, dados || {});
+    var area = document.body.getAttribute("data-area");
+    if (area) d.area = area;
+    if (typeof window.gtag === "function") window.gtag("event", nome, d);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: nome }, d));
+  }
+
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest ? e.target.closest("[data-cta]") : null;
+    if (!el) return;
+    var href = el.getAttribute("href") || "";
+    ev("cta_clique", { cta: el.getAttribute("data-cta"), destino: href });
+    if (href.indexOf("wa.me") > -1) ev("contato_whatsapp", { origem: el.getAttribute("data-cta") });
+  });
+
+  /* ── Cabeçalho ── */
+  var cab = document.querySelector(".cab");
+  function aoRolar() {
+    if (cab) cab.classList.toggle("desceu", window.scrollY > 40);
+  }
+  window.addEventListener("scroll", aoRolar, { passive: true });
+  aoRolar();
+
+  /* ── Menu lateral ── */
+  var btnMenu = document.getElementById("btnMenu");
+  var gaveta = document.getElementById("gaveta");
+  var veu = document.getElementById("veu");
+
+  function abrirMenu() {
+    if (!gaveta) return;
+    gaveta.classList.add("aberta");
+    if (veu) { veu.hidden = false; requestAnimationFrame(function () { veu.classList.add("ativo"); }); }
+    if (btnMenu) btnMenu.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+    var a = gaveta.querySelector("a");
+    if (a) setTimeout(function () { a.focus(); }, 120);
+  }
+
+  function fecharMenu() {
+    if (!gaveta) return;
+    gaveta.classList.remove("aberta");
+    if (veu) {
+      veu.classList.remove("ativo");
+      setTimeout(function () { veu.hidden = true; }, 350);
     }
-    function fechar() {
-      gav.classList.remove("on"); veu.classList.remove("on");
-      btn.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
-      setTimeout(function () { veu.hidden = true; }, 260);
-    }
-    btn.addEventListener("click", function (e) {
+    if (btnMenu) btnMenu.setAttribute("aria-expanded", "false");
+    if (!modalAberto()) document.body.style.overflow = "";
+  }
+
+  if (btnMenu) btnMenu.addEventListener("click", abrirMenu);
+  if (veu) veu.addEventListener("click", fecharMenu);
+  document.addEventListener("click", function (e) {
+    if (e.target.closest && e.target.closest("[data-fechar]")) fecharMenu();
+    if (gaveta && gaveta.classList.contains("aberta") && e.target.closest && e.target.closest(".gaveta a")) fecharMenu();
+  });
+
+  /* ── Modal de contato ── */
+  var modal = document.getElementById("formModal");
+  var ultimoFoco = null;
+
+  function modalAberto() {
+    return modal && !modal.hidden;
+  }
+
+  function abrirModal(origem) {
+    if (!modal) return;
+    ultimoFoco = document.activeElement;
+    fecharMenu();
+    modal.hidden = false;
+    modal.setAttribute("aria-hidden", "false");
+    requestAnimationFrame(function () { modal.classList.add("aberto"); });
+    document.body.style.overflow = "hidden";
+    ev("formulario_abrir", { origem: origem || "" });
+    var campo = modal.querySelector("input,select,textarea");
+    if (campo) setTimeout(function () { campo.focus(); }, 160);
+  }
+
+  function fecharModal() {
+    if (!modal) return;
+    modal.classList.remove("aberto");
+    modal.setAttribute("aria-hidden", "true");
+    setTimeout(function () { modal.hidden = true; }, 300);
+    document.body.style.overflow = "";
+    if (ultimoFoco && ultimoFoco.focus) ultimoFoco.focus();
+  }
+
+  document.addEventListener("click", function (e) {
+    var abre = e.target.closest ? e.target.closest("[data-open-form]") : null;
+    if (abre) {
       e.preventDefault();
-      gav.classList.contains("on") ? fechar() : abrir();
-    });
-    veu.addEventListener("click", fechar);
-    var x = gav.querySelector("[data-fechar]");
-    if (x) x.addEventListener("click", fechar);
-    gav.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", fechar); });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && gav.classList.contains("on")) fechar();
-    });
-  }
-
-  /* ── Eventos de conversão (GA4) ── */
-  function ev(nome, extra) {
-    var d = { area: document.body.dataset.area || "geral",
-              pagina: location.pathname };
-    if (extra) for (var k in extra) d[k] = extra[k];
-    if (typeof gtag === "function") gtag("event", nome, d);
-    (window.dataLayer = window.dataLayer || []).push(
-      Object.assign({ event: nome }, d)
-    );
-  }
-
-  function rastrear() {
-    document.querySelectorAll("[data-cta]").forEach(function (el) {
-      el.addEventListener("click", function () {
-        ev("cta_clique", { cta: el.dataset.cta,
-                           destino: el.getAttribute("href") || "" });
-      });
-    });
-    document.querySelectorAll('a[href^="https://wa.me"],a[href^="https://api.whatsapp"]')
-      .forEach(function (a) {
-        a.addEventListener("click", function () {
-          ev("contato_whatsapp", { origem: a.dataset.cta || "link" });
-        });
-      });
-    document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
-      a.addEventListener("click", function () { ev("contato_telefone"); });
-    });
-  }
-
-  /* ── Formulário → envio real de e-mail via FormSubmit ── */
-  var FORM_EMAIL = "gustavoparisvaccari" + "@" + "gmail.com";
-
-  function validarContato(f) {
-    var tel = f.querySelector('[name="Telefone"]'),
-      mail = f.querySelector('[name="E-mail"]'),
-      campoTel = tel ? tel.closest(".campo") : null,
-      campoMail = mail ? mail.closest(".campo") : null,
-      aviso = f.querySelector(".form-aviso-contato");
-    if (campoTel) campoTel.classList.remove("campo-invalido");
-    if (campoMail) campoMail.classList.remove("campo-invalido");
-    if (aviso) aviso.remove();
-    var vTel = tel ? tel.value.trim() : "", vMail = mail ? mail.value.trim() : "";
-    if (!vTel && !vMail) {
-      if (campoTel) campoTel.classList.add("campo-invalido");
-      if (campoMail) campoMail.classList.add("campo-invalido");
-      var novo = document.createElement("p");
-      novo.className = "form-aviso-contato";
-      novo.textContent = "Informe pelo menos um contato: telefone/WhatsApp ou e-mail.";
-      var ref = campoMail || campoTel || f.firstElementChild;
-      if (ref && ref.parentNode) ref.parentNode.insertBefore(novo, ref.nextSibling);
-      return false;
+      var pre = abre.getAttribute("data-form-assunto") || document.body.getAttribute("data-assunto");
+      if (pre && modal) {
+        var sel = modal.querySelector('select[name="Situação"]');
+        if (sel) {
+          Array.prototype.forEach.call(sel.options, function (o) {
+            if (o.textContent.trim() === pre) sel.value = o.value || o.textContent;
+          });
+        }
+      }
+      abrirModal(abre.getAttribute("data-open-form"));
+      return;
     }
-    return true;
+    if (e.target.closest && e.target.closest("[data-close-form]")) { fecharModal(); return; }
+    if (modalAberto() && e.target === modal) fecharModal();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    if (modalAberto()) fecharModal();
+    else fecharMenu();
+  });
+
+  /* Foco preso dentro do modal */
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Tab" || !modalAberto()) return;
+    var fs = modal.querySelectorAll('a[href],button:not([disabled]),input,select,textarea');
+    if (!fs.length) return;
+    var pri = fs[0], ult = fs[fs.length - 1];
+    if (e.shiftKey && document.activeElement === pri) { e.preventDefault(); ult.focus(); }
+    else if (!e.shiftKey && document.activeElement === ult) { e.preventDefault(); pri.focus(); }
+  });
+
+  /* ── Envio dos formulários ── */
+  function statusDe(form) {
+    var s = form.querySelector(".form-status");
+    if (!s) {
+      s = document.createElement("p");
+      s.className = "form-status";
+      s.setAttribute("role", "status");
+      s.setAttribute("aria-live", "polite");
+      form.appendChild(s);
+    }
+    return s;
   }
 
-  function formulario(f) {
-    var status = f.querySelector(".form-status"),
-      btn = f.querySelector('button[type="submit"]');
+  function enviar(form) {
+    var status = statusDe(form);
+    var botao = form.querySelector('button[type="submit"]');
+    var dados = {};
+    new FormData(form).forEach(function (v, k) { dados[k] = v; });
 
-    function setStatus(texto, ok) {
-      if (!status) return;
-      status.className = "form-status" + (ok ? " ok" : ok === false ? " erro" : "");
-      status.textContent = texto || "";
+    var tel = (dados["Telefone"] || "").trim();
+    var mail = (dados["E-mail"] || "").trim();
+    var nome = (dados["Nome"] || "").trim();
+
+    if (!nome) {
+      status.className = "form-status erro";
+      status.textContent = "Informe seu nome para que possamos retornar.";
+      var cn = form.querySelector('input[name="Nome"]');
+      if (cn) cn.focus();
+      return;
+    }
+    if (!tel && !mail) {
+      status.className = "form-status erro";
+      status.textContent = "Informe pelo menos um contato: telefone/WhatsApp ou e-mail.";
+      var ct = form.querySelector('input[name="Telefone"]');
+      if (ct) ct.focus();
+      return;
+    }
+    if (mail && !/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(mail)) {
+      status.className = "form-status erro";
+      status.textContent = "Verifique o endereço de e-mail informado.";
+      form.querySelector('input[name="E-mail"]').focus();
+      return;
     }
 
-    f.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!validarContato(f)) return;
-      btn.disabled = true;
-      var textoOriginal = btn.textContent;
-      btn.textContent = "Enviando…";
-      setStatus("Enviando suas informações…", null);
+    dados._subject = "Novo contato pelo site — " + nome;
+    dados._template = "table";
+    dados._captcha = "false";
+    dados["Página de origem"] = location.pathname;
 
-      var dados = Object.fromEntries(new FormData(f).entries());
-      fetch("https://formsubmit.co/ajax/" + FORM_EMAIL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(Object.assign({}, dados, {
-          _subject: "Novo contato pelo site — " + (dados["Nome"] || "Sem nome"),
-          _template: "table",
-          _captcha: "false",
-          Página: location.pathname,
-        })),
+    if (botao) { botao.disabled = true; botao.setAttribute("data-rotulo", botao.textContent); botao.textContent = "Enviando…"; }
+    status.className = "form-status";
+    status.textContent = "Enviando suas informações…";
+
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(dados)
+    })
+      .then(function (r) { if (!r.ok) throw new Error("falha"); return r.json(); })
+      .then(function () {
+        form.reset();
+        status.className = "form-status ok";
+        status.textContent = "Mensagem enviada. Você receberá um retorno em breve.";
+        ev("formulario_envio", { situacao: dados["Situação"] || "", origem: form.id || "" });
       })
-        .then(function (r) { if (!r.ok) throw new Error("Falha no envio"); return r.json(); })
-        .then(function () {
-          f.reset();
-          setStatus("Formulário enviado com sucesso. Você receberá um retorno em breve.", true);
-          ev("formulario_envio", { area_form: dados["Situação"] || "" });
-        })
-        .catch(function () {
-          setStatus("Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.", false);
-        })
-        .finally(function () {
-          btn.disabled = false;
-          btn.textContent = textoOriginal;
-        });
-    });
+      .catch(function () {
+        status.className = "form-status erro";
+        status.textContent = "Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.";
+      })
+      .then(function () {
+        if (botao) { botao.disabled = false; botao.textContent = botao.getAttribute("data-rotulo") || "Enviar mensagem"; }
+      });
   }
 
+  document.addEventListener("submit", function (e) {
+    var form = e.target;
+    if (!form.classList || !form.classList.contains("form")) return;
+    e.preventDefault();
+    enviar(form);
+  });
 
-  /* ── Formulário rápido: disponível no topo, menu e hero ── */
-  function modalContato() {
-    var modal = document.getElementById("formModal"),
-      form = document.getElementById("formModalContato");
-    if (!modal || !form) return;
-
-    function abrir(origem) {
-      modal.hidden = false;
-      modal.setAttribute("aria-hidden", "false");
-      document.body.classList.add("form-opened");
-      ev("formulario_aberto", { origem: origem || "site" });
-      setTimeout(function () {
-        var primeiro = form.querySelector("input");
-        if (primeiro) primeiro.focus();
-      }, 40);
-    }
-    function fechar() {
-      modal.hidden = true;
-      modal.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("form-opened");
-    }
-
-    document.querySelectorAll("[data-open-form]").forEach(function (el) {
-      el.addEventListener("click", function () {
-        var gav = document.getElementById("gaveta"), veu = document.getElementById("veu");
-        if (gav) gav.classList.remove("on");
-        if (veu) { veu.classList.remove("on"); setTimeout(function(){ veu.hidden = true; }, 180); }
-        var menuBtn = document.getElementById("btnMenu");
-        if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-        abrir(el.dataset.openForm);
+  /* Pré-seleciona a situação conforme a página */
+  var assunto = document.body.getAttribute("data-assunto");
+  if (assunto) {
+    Array.prototype.forEach.call(document.querySelectorAll('select[name="Situação"]'), function (sel) {
+      Array.prototype.forEach.call(sel.options, function (o) {
+        if (o.textContent.trim() === assunto) sel.value = o.value || o.textContent;
       });
     });
-    document.querySelectorAll("[data-close-form]").forEach(function (el) {
-      el.addEventListener("click", fechar);
-    });
-    modal.addEventListener("click", function (e) {
-      if (e.target === modal) fechar();
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !modal.hidden) fechar();
-    });
-
-    formulario(form);
   }
-
-  function navegacaoAtiva() {
-    var atual = location.pathname.replace(/\\/g, "/").replace(/\/$/, "") || "/";
-    document.querySelectorAll(".nav-d a").forEach(function (a) {
-      try {
-        var destino = new URL(a.href, location.href).pathname.replace(/\\/g, "/").replace(/\/$/, "") || "/";
-        if (destino === atual) a.classList.add("is-active");
-      } catch (e) {}
-    });
-  }
-
-  function iniciar() {
-    navegacaoAtiva();
-    menu();
-    rastrear();
-    document.querySelectorAll("form.form").forEach(function (f) {
-      if (f.id !== "formModalContato") formulario(f);
-    });
-    modalContato();
-  }
-  document.readyState === "loading"
-    ? document.addEventListener("DOMContentLoaded", iniciar)
-    : iniciar();
 })();

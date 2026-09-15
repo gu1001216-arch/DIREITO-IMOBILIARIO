@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Advogado Imobiliário em Santa Catarina — Vaccari Advocacia</title>
+<meta name="description" content="Advocacia dedicada ao Direito Imobiliário em Santa Catarina: usucapião, regularização, adjudicação compulsória, contratos, imóveis rurais, desapropriação e servidão administrativa.">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Gustavo Paris Vaccari">
+<link rel="canonical" href="https://www.parisvaccari.adv.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Vaccari Advocacia">
+<meta property="og:title" content="Advogado Imobiliário em Santa Catarina — Vaccari Advocacia">
+<meta property="og:description" content="Advocacia dedicada ao Direito Imobiliário em Santa Catarina. Atuação em todo o Estado.">
+<meta property="og:url" content="https://www.parisvaccari.adv.br/">
+<meta property="og:image" content="https://www.parisvaccari.adv.br/assets/img/usucapiao.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1D3A31">
+<link rel="icon" href="assets/img/favicon.png" sizes="180x180">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #F7F4EE; color: #16191A; font-family: Manrope, system-ui, sans-serif; overflow-x: hidden; }
+  img { max-width: 100%; }
+  a { color: #1D3A31; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: #0E7167; }
+  summary { list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  details[open] [data-chev] { transform: rotate(180deg); }
+  :focus-visible { outline: 2px solid #0E7167; outline-offset: 3px; }
+  ::selection { background: #1D3A31; color: #F7F4EE; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
+  @keyframes pulsoZap {
+    0%, 100% { box-shadow: 0 10px 30px -8px rgba(11,60,36,.45), 0 0 0 0 rgba(37,211,102,.34); }
+    60% { box-shadow: 0 10px 30px -8px rgba(11,60,36,.45), 0 0 0 14px rgba(37,211,102,0); }
+  }
+</style>
+</helmet>
+
+<div id="topo" style="background:#F7F4EE">
+
+<a href="#conteudo" style="position:absolute;left:-9999px;top:0;z-index:200;background:#1D3A31;color:#fff;padding:.9rem 1.2rem;font:600 .9rem/1 Manrope,sans-serif" style-focus="left:12px;top:12px">Ir para o conteúdo</a>
+
+<header ref="{{ refCab }}" style="position:sticky;top:0;z-index:60;background:rgba(247,244,238,.94);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #E5E0D5;transition:padding .34s cubic-bezier(.4,0,.2,1)">
+  <div style="max-width:1280px;margin:0 auto;padding:18px clamp(20px,4.6vw,56px);display:flex;align-items:center;gap:1.5rem">
+    <a href="./" aria-label="Vaccari Advocacia — página inicial" style="flex:0 0 auto;display:block;line-height:0">
+      <img ref="{{ refLogo }}" src="assets/img/logo.png" alt="Vaccari Advocacia — Direito Imobiliário" width="1000" height="297" style="height:clamp(34px,4.2vw,44px);width:auto;display:block;transition:height .34s cubic-bezier(.4,0,.2,1)">
+    </a>
+    <nav aria-label="Navegação principal" style="margin-left:auto;display:none;gap:clamp(1rem,2.1vw,2.1rem);align-items:center" data-nav-d>
+      <a href="#topo" style="font:500 .875rem/1 Manrope,sans-serif;color:#3D3A34;text-decoration:none;white-space:nowrap;padding:.5rem 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s" style-hover="color:#1D3A31;border-color:#1D3A31">Início</a>
+      <a href="#areas" style="font:500 .875rem/1 Manrope,sans-serif;color:#3D3A34;text-decoration:none;white-space:nowrap;padding:.5rem 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s" style-hover="color:#1D3A31;border-color:#1D3A31">Áreas de atuação</a>
+      <a href="#sobre" style="font:500 .875rem/1 Manrope,sans-serif;color:#3D3A34;text-decoration:none;white-space:nowrap;padding:.5rem 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s" style-hover="color:#1D3A31;border-color:#1D3A31">Sobre</a>
+      <a href="#como" style="font:500 .875rem/1 Manrope,sans-serif;color:#3D3A34;text-decoration:none;white-space:nowrap;padding:.5rem 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s" style-hover="color:#1D3A31;border-color:#1D3A31">Como funciona</a>
+      <a href="#faq" style="font:500 .875rem/1 Manrope,sans-serif;color:#3D3A34;text-decoration:none;white-space:nowrap;padding:.5rem 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s" style-hover="color:#1D3A31;border-color:#1D3A31">FAQ</a>
+      <a href="#contato" style="font:500 .875rem/1 Manrope,sans-serif;color:#3D3A34;text-decoration:none;white-space:nowrap;padding:.5rem 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s" style-hover="color:#1D3A31;border-color:#1D3A31">Contato</a>
+      <a href="{{ zap }}" target="_blank" rel="noopener" data-cta="header-whatsapp" style="display:inline-flex;align-items:center;gap:.55rem;min-height:44px;padding:0 1.15rem;background:#0E7167;color:#fff;font:600 .85rem/1 Manrope,sans-serif;white-space:nowrap;text-decoration:none;transition:background .3s" style-hover="background:#0B5C54;color:#fff">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.35-.35.52-.52.17-.18.23-.3.35-.5.11-.2.05-.37-.03-.52-.09-.15-.66-1.6-.91-2.19-.24-.57-.48-.5-.66-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9a11.82 11.82 0 0 0-3.48-8.41"/></svg>
+        Falar no WhatsApp
+      </a>
+    </nav>
+    <button ref="{{ refBtn }}" onClick="{{ abrirMenu }}" aria-label="Abrir menu" aria-expanded="false" style="margin-left:auto;display:flex;flex-direction:column;justify-content:center;gap:5px;width:48px;height:48px;padding:0 10px;background:transparent;border:1px solid #DCD6CA;cursor:pointer" data-ham>
+      <span style="display:block;height:1px;background:#16191A"></span>
+      <span style="display:block;height:1px;background:#16191A"></span>
+      <span style="display:block;height:1px;background:#16191A;width:60%"></span>
+    </button>
+  </div>
+</header>
+
+<div ref="{{ refVeu }}" onClick="{{ fecharMenu }}" style="position:fixed;inset:0;z-index:80;background:rgba(18,21,19,.5);opacity:0;pointer-events:none;transition:opacity .35s"></div>
+
+<aside ref="{{ refGav }}" aria-label="Menu" style="position:fixed;top:0;right:0;bottom:0;z-index:90;width:min(88vw,400px);background:#F7F4EE;border-left:1px solid #E5E0D5;display:flex;flex-direction:column;overflow-y:auto;transform:translateX(100%);visibility:hidden;transition:transform .42s cubic-bezier(.4,0,.2,1),visibility .42s;padding:20px 24px calc(28px + env(safe-area-inset-bottom))">
+  <div style="display:flex;justify-content:flex-end">
+    <button onClick="{{ fecharMenu }}" aria-label="Fechar menu" style="width:48px;height:48px;background:transparent;border:1px solid #DCD6CA;color:#16191A;font:300 1.6rem/1 Manrope,sans-serif;cursor:pointer" style-hover="background:#16191A;color:#F7F4EE">×</button>
+  </div>
+  <nav aria-label="Navegação" style="display:flex;flex-direction:column;margin-top:1.5rem">
+    <a href="#topo" onClick="{{ fecharMenu }}" style="font:500 1.25rem/1 'Cormorant Garamond',Georgia,serif;color:#16191A;text-decoration:none;padding:1rem 0;border-bottom:1px solid #E5E0D5;min-height:56px;display:flex;align-items:center">Início</a>
+    <a href="#areas" onClick="{{ fecharMenu }}" style="font:500 1.25rem/1 'Cormorant Garamond',Georgia,serif;color:#16191A;text-decoration:none;padding:1rem 0;border-bottom:1px solid #E5E0D5;min-height:56px;display:flex;align-items:center">Áreas de atuação</a>
+    <a href="#situacao" onClick="{{ fecharMenu }}" style="font:500 1.25rem/1 'Cormorant Garamond',Georgia,serif;color:#16191A;text-decoration:none;padding:1rem 0;border-bottom:1px solid #E5E0D5;min-height:56px;display:flex;align-items:center">Qual é a sua situação</a>
+    <a href="#sobre" onClick="{{ fecharMenu }}" style="font:500 1.25rem/1 'Cormorant Garamond',Georgia,serif;color:#16191A;text-decoration:none;padding:1rem 0;border-bottom:1px solid #E5E0D5;min-height:56px;display:flex;align-items:center">Sobre</a>
+    <a href="#como" onClick="{{ fecharMenu }}" style="font:500 1.25rem/1 'Cormorant Garamond',Georgia,serif;color:#16191A;text-decoration:none;padding:1rem 0;border-bottom:1px solid #E5E0D5;min-height:56px;display:flex;align-items:center">Como funciona</a>
+    <a href="#faq" onClick="{{ fecharMenu }}" style="font:500 1.25rem/1 'Cormorant Garamond',Georgia,serif;color:#16191A;text-decoration:none;padding:1rem 0;border-bottom:1px solid #E5E0D5;min-height:56px;display:flex;align-items:center">Perguntas frequentes</a>
+    <a href="#contato" onClick="{{ fecharMenu }}" style="font:500 1.25rem/1 'Cormorant Garamond',Georgia,serif;color:#16191A;text-decoration:none;padding:1rem 0;border-bottom:1px solid #E5E0D5;min-height:56px;display:flex;align-items:center">Contato</a>
+  </nav>
+  <p style="margin:1.75rem 0 .75rem;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#6E6A62">Atendimento</p>
+  <a href="{{ zap }}" target="_blank" rel="noopener" data-cta="menu-whatsapp" style="display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:58px;padding:0 1.4rem;background:#0E7167;color:#fff;font:600 .95rem/1 Manrope,sans-serif;text-decoration:none;transition:background .3s" style-hover="background:#0B5C54;color:#fff">
+    <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.35-.35.52-.52.17-.18.23-.3.35-.5.11-.2.05-.37-.03-.52-.09-.15-.66-1.6-.91-2.19-.24-.57-.48-.5-.66-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9a11.82 11.82 0 0 0-3.48-8.41"/></svg>
+    Falar sobre meu imóvel
+  </a>
+  <a href="#contato" onClick="{{ fecharMenu }}" style="display:inline-flex;align-items:center;justify-content:center;min-height:56px;margin-top:.75rem;padding:0 1.4rem;background:transparent;color:#16191A;border:1px solid #16191A;font:600 .95rem/1 Manrope,sans-serif;text-decoration:none;transition:background .3s,color .3s" style-hover="background:#16191A;color:#F7F4EE">Enviar mensagem pelo site</a>
+</aside>
+
+<main id="conteudo">
+
+<section aria-labelledby="h1-hero" style="padding:clamp(34px,5vw,74px) 0 clamp(48px,6vw,86px)">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4.6vw,56px);display:grid;grid-template-columns:1fr;gap:clamp(30px,4vw,60px);align-items:center" data-hero>
+    <div>
+      <p style="margin:0;display:flex;align-items:center;gap:.7rem;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#0E7167">
+        <span style="display:inline-block;width:28px;height:1px;background:#A8823C"></span>Direito Imobiliário
+      </p>
+      <h1 id="h1-hero" style="margin:1.1rem 0 0;font:500 clamp(2.15rem,5vw,4rem)/1.05 'Cormorant Garamond',Georgia,serif;letter-spacing:-.015em;color:#16191A;max-width:20ch;text-wrap:balance">Segurança jurídica para decisões que envolvem seu imóvel e seu patrimônio</h1>
+      <p style="margin:1.35rem 0 0;font:400 clamp(1.02rem,1.15vw,1.125rem)/1.68 Manrope,sans-serif;color:#4C4941;max-width:54ch;text-wrap:pretty">Atuação concentrada em propriedade, posse, regularização, usucapião, contratos, imóveis rurais e conflitos imobiliários — em todo o Estado de Santa Catarina.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.9rem">
+        <a href="{{ zap }}" target="_blank" rel="noopener" data-cta="hero-whatsapp-home" style="display:inline-flex;align-items:center;justify-content:center;gap:.65rem;min-height:58px;padding:0 1.6rem;background:#0E7167;color:#fff;font:600 .975rem/1 Manrope,sans-serif;text-decoration:none;transition:background .3s,transform .3s" style-hover="background:#0B5C54;color:#fff;transform:translateY(-1px)">
+          <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.35-.35.52-.52.17-.18.23-.3.35-.5.11-.2.05-.37-.03-.52-.09-.15-.66-1.6-.91-2.19-.24-.57-.48-.5-.66-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9a11.82 11.82 0 0 0-3.48-8.41"/></svg>
+          Falar sobre meu imóvel
+        </a>
+        <a href="#areas" data-cta="hero-areas" style="display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:58px;padding:0 1.5rem;background:transparent;color:#16191A;border:1px solid #16191A;font:600 .975rem/1 Manrope,sans-serif;text-decoration:none;transition:background .3s,color .3s" style-hover="background:#16191A;color:#F7F4EE">Conhecer áreas de atuação</a>
+      </div>
+      <p style="margin:1.6rem 0 0;display:flex;align-items:center;gap:.6rem;font:500 .8125rem/1.5 Manrope,sans-serif;color:#6E6A62">
+        <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#0E7167;flex:0 0 auto"></span>
+        Atendimento em todo o Estado de Santa Catarina
+      </p>
+    </div>
+    <figure style="margin:0;position:relative">
+      <picture>
+        <source media="(max-width:600px)" srcSet="assets/img/adjudicacao-sm.webp">
+        <source media="(max-width:1024px)" srcSet="assets/img/adjudicacao-md.webp">
+        <img src="assets/img/adjudicacao.webp" alt="Residência contemporânea ao anoitecer, com chaves sobre a entrada de veículos" width="1600" height="900" fetchpriority="high" decoding="async" style="width:100%;height:clamp(230px,38vw,520px);object-fit:cover;display:block;background:#EAE5DB">
+      </picture>
+      <figcaption style="position:absolute;left:0;bottom:0;background:#1D3A31;color:#F2EFE8;padding:.85rem 1.1rem;font:600 .6875rem/1.3 Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;max-width:70%">Patrimônio imobiliário urbano e rural</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section aria-labelledby="h2-pos" style="background:#1D3A31;color:#EFEDE6;padding:clamp(56px,7vw,110px) 0;scroll-margin-top:96px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4.6vw,56px);display:grid;grid-template-columns:1fr;gap:clamp(24px,3.4vw,64px)" data-pos>
+    <div>
+      <p style="margin:0;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#9FBFAE">Direito Imobiliário</p>
+      <h2 id="h2-pos" style="margin:1.1rem 0 0;font:500 clamp(1.7rem,2.9vw,2.6rem)/1.15 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em;color:#FBFAF6;max-width:26ch;text-wrap:pretty">Atuação jurídica concentrada em questões que envolvem propriedade, posse e patrimônio imobiliário</h2>
+    </div>
+    <div>
+      <p style="margin:0;font:400 clamp(1rem,1.05vw,1.0625rem)/1.75 Manrope,sans-serif;color:#D3D9D1;max-width:56ch;text-wrap:pretty">Um imóvel que não pode ser vendido, uma escritura que nunca saiu, uma divisa em discussão, uma matrícula que não corresponde ao terreno, uma obra que atingiu a propriedade. São situações diferentes, mas quase todas se explicam pela distância entre o que o registro diz e o que existe de fato.</p>
+      <p style="margin:1.1rem 0 0;font:400 clamp(1rem,1.05vw,1.0625rem)/1.75 Manrope,sans-serif;color:#D3D9D1;max-width:56ch;text-wrap:pretty">Identificar essa origem é o que define o instrumento adequado. Por isso a análise começa sempre pela documentação, antes de qualquer definição de estratégia.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h2-frentes" style="padding:clamp(56px,7vw,112px) 0;scroll-margin-top:96px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4.6vw,56px)">
+    <p style="margin:0;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#6E6A62">Principais frentes</p>
+    <h2 id="h2-frentes" style="margin:.8rem 0 0;font:500 clamp(1.8rem,3.2vw,2.8rem)/1.12 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em;color:#16191A;max-width:24ch">Quatro frentes concentram a maior parte dos casos</h2>
+    <div style="margin-top:clamp(28px,3.5vw,52px);border-top:1px solid #DCD6CA">
+      <a href="usucapiao/" data-cta="frente-usucapiao" style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(1rem,2.5vw,2.5rem);padding:clamp(1.3rem,2.2vw,1.9rem) clamp(0px,1vw,1rem);border-bottom:1px solid #DCD6CA;text-decoration:none;color:inherit;transition:background .3s,padding-left .3s" style-hover="background:#F1EDE4;padding-left:1.25rem">
+        <span style="font:400 clamp(1.9rem,3.4vw,3rem)/1 'Cormorant Garamond',Georgia,serif;color:#C0B69F;min-width:2.2ch">01</span>
+        <span style="display:grid;gap:.35rem">
+          <span style="font:600 clamp(1.1rem,1.6vw,1.3rem)/1.25 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Usucapião</span>
+          <span style="font:400 .9375rem/1.6 Manrope,sans-serif;color:#5A564E;max-width:58ch">Regularização da propriedade pela posse, observados os requisitos legais — nas vias extrajudicial e judicial, urbana e rural.</span>
+        </span>
+        <span aria-hidden="true" style="font:400 1.35rem/1 Manrope,sans-serif;color:#0E7167;transition:transform .3s" style-hover="transform:translateX(6px)">→</span>
+      </a>
+      <a href="regularizacao-de-imoveis/" data-cta="frente-regularizacao" style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(1rem,2.5vw,2.5rem);padding:clamp(1.3rem,2.2vw,1.9rem) clamp(0px,1vw,1rem);border-bottom:1px solid #DCD6CA;text-decoration:none;color:inherit;transition:background .3s,padding-left .3s" style-hover="background:#F1EDE4;padding-left:1.25rem">
+        <span style="font:400 clamp(1.9rem,3.4vw,3rem)/1 'Cormorant Garamond',Georgia,serif;color:#C0B69F;min-width:2.2ch">02</span>
+        <span style="display:grid;gap:.35rem">
+          <span style="font:600 clamp(1.1rem,1.6vw,1.3rem)/1.25 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Regularização de imóveis</span>
+          <span style="font:400 .9375rem/1.6 Manrope,sans-serif;color:#5A564E;max-width:58ch">Análise documental e definição do caminho jurídico adequado para regularizar o imóvel e destravar venda, financiamento e transmissão.</span>
+        </span>
+        <span aria-hidden="true" style="font:400 1.35rem/1 Manrope,sans-serif;color:#0E7167;transition:transform .3s" style-hover="transform:translateX(6px)">→</span>
+      </a>
+      <a href="contratos-imobiliarios/" data-cta="frente-contratos" style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(1rem,2.5vw,2.5rem);padding:clamp(1.3rem,2.2vw,1.9rem) clamp(0px,1vw,1rem);border-bottom:1px solid #DCD6CA;text-decoration:none;color:inherit;transition:background .3s,padding-left .3s" style-hover="background:#F1EDE4;padding-left:1.25rem">
+        <span style="font:400 clamp(1.9rem,3.4vw,3rem)/1 'Cormorant Garamond',Georgia,serif;color:#C0B69F;min-width:2.2ch">03</span>
+        <span style="display:grid;gap:.35rem">
+          <span style="font:600 clamp(1.1rem,1.6vw,1.3rem)/1.25 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Contratos imobiliários</span>
+          <span style="font:400 .9375rem/1.6 Manrope,sans-serif;color:#5A564E;max-width:58ch">Análise, elaboração e revisão de instrumentos relacionados a negócios imobiliários, antes da assinatura.</span>
+        </span>
+        <span aria-hidden="true" style="font:400 1.35rem/1 Manrope,sans-serif;color:#0E7167;transition:transform .3s" style-hover="transform:translateX(6px)">→</span>
+      </a>
+      <a href="posse-e-propriedade/" data-cta="frente-posse" style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(1rem,2.5vw,2.5rem);padding:clamp(1.3rem,2.2vw,1.9rem) clamp(0px,1vw,1rem);border-bottom:1px solid #DCD6CA;text-decoration:none;color:inherit;transition:background .3s,padding-left .3s" style-hover="background:#F1EDE4;padding-left:1.25rem">
+        <span style="font:400 clamp(1.9rem,3.4vw,3rem)/1 'Cormorant Garamond',Georgia,serif;color:#C0B69F;min-width:2.2ch">04</span>
+        <span style="display:grid;gap:.35rem">
+          <span style="font:600 clamp(1.1rem,1.6vw,1.3rem)/1.25 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Posse e propriedade</span>
+          <span style="font:400 .9375rem/1.6 Manrope,sans-serif;color:#5A564E;max-width:58ch">Atuação em questões relacionadas à posse, à propriedade e a conflitos de divisa entre imóveis.</span>
+        </span>
+        <span aria-hidden="true" style="font:400 1.35rem/1 Manrope,sans-serif;color:#0E7167;transition:transform .3s" style-hover="transform:translateX(6px)">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="situacao" aria-labelledby="h2-sit" style="background:#FDFCFA;border-top:1px solid #E5E0D5;border-bottom:1px solid #E5E0D5;padding:clamp(56px,7vw,112px) 0;scroll-margin-top:96px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4.6vw,56px)">
+    <p style="margin:0;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#6E6A62">Ponto de partida</p>
+    <h2 id="h2-sit" style="margin:.8rem 0 0;font:500 clamp(1.8rem,3.2vw,2.8rem)/1.12 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em;color:#16191A;max-width:24ch">Qual é a situação do seu imóvel?</h2>
+    <p style="margin:1rem 0 0;font:400 1.0625rem/1.7 Manrope,sans-serif;color:#4C4941;max-width:56ch">Identifique abaixo a situação mais próxima do seu caso.</p>
+    <div style="margin-top:clamp(26px,3.2vw,46px);display:grid;grid-template-columns:1fr;gap:1px;background:#E5E0D5;border:1px solid #E5E0D5" data-sit>
+      <a href="usucapiao/" data-cta="situacao-usucapiao" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px;padding:1.1rem 1.25rem;background:#FDFCFA;text-decoration:none;color:inherit;transition:background .28s" style-hover="background:#F1EDE4">
+        <span style="font:500 1rem/1.45 Manrope,sans-serif;color:#16191A;max-width:34ch">Tenho posse de um imóvel há muitos anos</span>
+        <span style="display:flex;align-items:center;gap:.6rem;flex:0 0 auto"><span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0E7167">Usucapião</span><span aria-hidden="true" style="color:#0E7167">→</span></span>
+      </a>
+      <a href="regularizacao-de-imoveis/" data-cta="situacao-regularizacao" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px;padding:1.1rem 1.25rem;background:#FDFCFA;text-decoration:none;color:inherit;transition:background .28s" style-hover="background:#F1EDE4">
+        <span style="font:500 1rem/1.45 Manrope,sans-serif;color:#16191A;max-width:34ch">Quero regularizar um imóvel</span>
+        <span style="display:flex;align-items:center;gap:.6rem;flex:0 0 auto"><span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0E7167">Regularização</span><span aria-hidden="true" style="color:#0E7167">→</span></span>
+      </a>
+      <a href="adjudicacao-compulsoria/" data-cta="situacao-adjudicacao" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px;padding:1.1rem 1.25rem;background:#FDFCFA;text-decoration:none;color:inherit;transition:background .28s" style-hover="background:#F1EDE4">
+        <span style="font:500 1rem/1.45 Manrope,sans-serif;color:#16191A;max-width:34ch">Comprei um imóvel e não consigo registrar</span>
+        <span style="display:flex;align-items:center;gap:.6rem;flex:0 0 auto"><span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0E7167">Adjudicação</span><span aria-hidden="true" style="color:#0E7167">→</span></span>
+      </a>
+      <a href="compra-e-venda-de-imoveis/" data-cta="situacao-compra-e-venda" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px;padding:1.1rem 1.25rem;background:#FDFCFA;text-decoration:none;color:inherit;transition:background .28s" style-hover="background:#F1EDE4">
+        <span style="font:500 1rem/1.45 Manrope,sans-serif;color:#16191A;max-width:34ch">Vou comprar ou vender um imóvel</span>
+        <span style="display:flex;align-items:center;gap:.6rem;flex:0 0 auto"><span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0E7167">Compra e venda</span><span aria-hidden="true" style="color:#0E7167">→</span></span>
+      </a>
+      <a href="registro-de-imoveis/" data-cta="situacao-registro" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px;padding:1.1rem 1.25rem;background:#FDFCFA;text-decoration:none;color:inherit;transition:background .28s" style-hover="background:#F1EDE4">
+        <span style="font:500 1rem/1.45 Manrope,sans-serif;color:#16191A;max-width:34ch">Existe um problema na matrícula</span>
+        <span style="display:flex;align-items:center;gap:.6rem;flex:0 0 auto"><span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0E7167">Registro</span><span aria-hidden="true" style="color:#0E7167">→</span></span>
+      </a>
+      <a href="imoveis-rurais/" data-cta="situacao-rurais" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px;padding:1.1rem 1.25rem;background:#FDFCFA;text-decoration:none;color:inherit;transition:background .28s" style-hover="background:#F1EDE4">
+        <span style="font:500 1rem/1.45 Manrope,sans-serif;color:#16191A;max-width:34ch">Tenho um imóvel rural</span>
+        <span style="display:flex;align-items:center;gap:.6rem;flex:0 0 auto"><span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0E7167">Imóveis rurais</span><span aria-hidden="true" style="color:#0E7167">→</span></span>
+      </a>
+      <a href="desapropriacao/" data-cta="situacao-desapropriacao" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px;padding:1.1rem 1.25rem;background:#FDFCFA;text-decoration:none;color:inherit;transition:background .28s" style-hover="background:#F1EDE4">
+        <span style="font:500 1rem/1.45 Manrope,sans-serif;color:#16191A;max-width:34ch">Uma obra pública atingiu meu imóvel</span>
+        <span style="display:flex;align-items:center;gap:.6rem;flex:0 0 auto"><span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0E7167">Desapropriação</span><span aria-hidden="true" style="color:#0E7167">→</span></span>
+      </a>
+      <a href="servidao-administrativa/" data-cta="situacao-servidao" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px;padding:1.1rem 1.25rem;background:#FDFCFA;text-decoration:none;color:inherit;transition:background .28s" style-hover="background:#F1EDE4">
+        <span style="font:500 1rem/1.45 Manrope,sans-serif;color:#16191A;max-width:34ch">Uma linha de transmissão passou pelo imóvel</span>
+        <span style="display:flex;align-items:center;gap:.6rem;flex:0 0 auto"><span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0E7167">Servidão</span><span aria-hidden="true" style="color:#0E7167">→</span></span>
+      </a>
+      <a href="posse-e-propriedade/" data-cta="situacao-divisa" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px;padding:1.1rem 1.25rem;background:#FDFCFA;text-decoration:none;color:inherit;transition:background .28s" style-hover="background:#F1EDE4">
+        <span style="font:500 1rem/1.45 Manrope,sans-serif;color:#16191A;max-width:34ch">Tenho conflito sobre a divisa do terreno</span>
+        <span style="display:flex;align-items:center;gap:.6rem;flex:0 0 auto"><span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0E7167">Posse e propriedade</span><span aria-hidden="true" style="color:#0E7167">→</span></span>
+      </a>
+      <a href="parcelamento-do-solo/" data-cta="situacao-parcelamento" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px;padding:1.1rem 1.25rem;background:#FDFCFA;text-decoration:none;color:inherit;transition:background .28s" style-hover="background:#F1EDE4">
+        <span style="font:500 1rem/1.45 Manrope,sans-serif;color:#16191A;max-width:34ch">Quero dividir uma área</span>
+        <span style="display:flex;align-items:center;gap:.6rem;flex:0 0 auto"><span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0E7167">Parcelamento do solo</span><span aria-hidden="true" style="color:#0E7167">→</span></span>
+      </a>
+    </div>
+    <p style="margin:1.4rem 0 0;font:400 .9375rem/1.65 Manrope,sans-serif;color:#6E6A62;max-width:60ch">Se a sua situação não estiver na lista, ela provavelmente se conecta a uma delas. O contato inicial ajuda a identificar.</p>
+  </div>
+</section>
+
+<section id="areas" aria-labelledby="h2-areas" style="padding:clamp(56px,7vw,112px) 0;scroll-margin-top:96px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4.6vw,56px)">
+    <p style="margin:0;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#6E6A62">Áreas de atuação</p>
+    <h2 id="h2-areas" style="margin:.8rem 0 0;font:500 clamp(1.8rem,3.2vw,2.8rem)/1.12 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em;color:#16191A;max-width:26ch">O que cada frente resolve</h2>
+    <div style="margin-top:clamp(26px,3.2vw,50px);display:grid;grid-template-columns:1fr;gap:clamp(20px,2.2vw,30px)" data-areas>
+
+      <a href="usucapiao/" data-cta="area-usucapiao" style="display:flex;flex-direction:column;background:#FDFCFA;border:1px solid #E5E0D5;text-decoration:none;color:inherit;transition:border-color .35s,box-shadow .35s" style-hover="border-color:#CFC7B6;box-shadow:0 22px 50px -32px rgba(20,25,22,.45)">
+        <span style="display:block;aspect-ratio:16/11;overflow:hidden;background:#EAE5DB"><img src="assets/img/usucapiao-md.webp" alt="Residência de longa data em rua arborizada, ao final do dia" width="1200" height="825" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.045)"></span>
+        <span style="display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.35rem 1.45rem;flex:1">
+          <span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.16em;color:#A8823C">01</span>
+          <span style="font:600 1.0625rem/1.3 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Usucapião</span>
+          <span style="font:400 .9375rem/1.62 Manrope,sans-serif;color:#5A564E">Regularização da propriedade pela posse, observados os requisitos legais.</span>
+          <span style="margin-top:auto;padding-top:.9rem;font:600 .8125rem/1 Manrope,sans-serif;color:#0E7167;display:inline-flex;gap:.4rem;transition:gap .3s" style-hover="gap:.8rem">Saiba mais <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+      <a href="regularizacao-de-imoveis/" data-cta="area-regularizacao-de-imoveis" style="display:flex;flex-direction:column;background:#FDFCFA;border:1px solid #E5E0D5;text-decoration:none;color:inherit;transition:border-color .35s,box-shadow .35s" style-hover="border-color:#CFC7B6;box-shadow:0 22px 50px -32px rgba(20,25,22,.45)">
+        <span style="display:block;aspect-ratio:16/11;overflow:hidden;background:#EAE5DB"><img src="assets/img/regularizacao-md.webp" alt="Planta arquitetônica e documentos imobiliários sobre mesa" width="1200" height="825" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.045)"></span>
+        <span style="display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.35rem 1.45rem;flex:1">
+          <span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.16em;color:#A8823C">02</span>
+          <span style="font:600 1.0625rem/1.3 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Regularização de imóveis</span>
+          <span style="font:400 .9375rem/1.62 Manrope,sans-serif;color:#5A564E">Análise documental e definição do caminho jurídico adequado para regularizar o imóvel.</span>
+          <span style="margin-top:auto;padding-top:.9rem;font:600 .8125rem/1 Manrope,sans-serif;color:#0E7167;display:inline-flex;gap:.4rem;transition:gap .3s" style-hover="gap:.8rem">Saiba mais <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+      <a href="adjudicacao-compulsoria/" data-cta="area-adjudicacao-compulsoria" style="display:flex;flex-direction:column;background:#FDFCFA;border:1px solid #E5E0D5;text-decoration:none;color:inherit;transition:border-color .35s,box-shadow .35s" style-hover="border-color:#CFC7B6;box-shadow:0 22px 50px -32px rgba(20,25,22,.45)">
+        <span style="display:block;aspect-ratio:16/11;overflow:hidden;background:#EAE5DB"><img src="assets/img/adjudicacao-md.webp" alt="Contrato, caneta e chaves sobre mesa com maquete de residência ao fundo" width="1200" height="825" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.045)"></span>
+        <span style="display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.35rem 1.45rem;flex:1">
+          <span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.16em;color:#A8823C">03</span>
+          <span style="font:600 1.0625rem/1.3 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Adjudicação compulsória</span>
+          <span style="font:400 .9375rem/1.62 Manrope,sans-serif;color:#5A564E">Formalização da propriedade quando o contrato foi cumprido, mas a transferência não foi realizada.</span>
+          <span style="margin-top:auto;padding-top:.9rem;font:600 .8125rem/1 Manrope,sans-serif;color:#0E7167;display:inline-flex;gap:.4rem;transition:gap .3s" style-hover="gap:.8rem">Saiba mais <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+      <a href="contratos-imobiliarios/" data-cta="area-contratos-imobiliarios" style="display:flex;flex-direction:column;background:#FDFCFA;border:1px solid #E5E0D5;text-decoration:none;color:inherit;transition:border-color .35s,box-shadow .35s" style-hover="border-color:#CFC7B6;box-shadow:0 22px 50px -32px rgba(20,25,22,.45)">
+        <span style="display:block;aspect-ratio:16/11;overflow:hidden;background:#EAE5DB"><img src="assets/img/contratos-md.webp" alt="Contrato imobiliário, caneta e chaves sobre mesa de madeira" width="1200" height="825" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.045)"></span>
+        <span style="display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.35rem 1.45rem;flex:1">
+          <span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.16em;color:#A8823C">04</span>
+          <span style="font:600 1.0625rem/1.3 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Contratos imobiliários</span>
+          <span style="font:400 .9375rem/1.62 Manrope,sans-serif;color:#5A564E">Análise, elaboração e revisão de instrumentos relacionados a negócios imobiliários.</span>
+          <span style="margin-top:auto;padding-top:.9rem;font:600 .8125rem/1 Manrope,sans-serif;color:#0E7167;display:inline-flex;gap:.4rem;transition:gap .3s" style-hover="gap:.8rem">Saiba mais <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+      <a href="posse-e-propriedade/" data-cta="area-posse-e-propriedade" style="display:flex;flex-direction:column;background:#FDFCFA;border:1px solid #E5E0D5;text-decoration:none;color:inherit;transition:border-color .35s,box-shadow .35s" style-hover="border-color:#CFC7B6;box-shadow:0 22px 50px -32px rgba(20,25,22,.45)">
+        <span style="display:block;aspect-ratio:16/11;overflow:hidden;background:#EAE5DB"><img src="assets/img/posse-md.webp" alt="Vista aérea de imóvel com divisas cercadas e terrenos vizinhos" width="1200" height="825" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.045)"></span>
+        <span style="display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.35rem 1.45rem;flex:1">
+          <span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.16em;color:#A8823C">05</span>
+          <span style="font:600 1.0625rem/1.3 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Posse e propriedade</span>
+          <span style="font:400 .9375rem/1.62 Manrope,sans-serif;color:#5A564E">Atuação em questões relacionadas à posse, à propriedade e a conflitos imobiliários.</span>
+          <span style="margin-top:auto;padding-top:.9rem;font:600 .8125rem/1 Manrope,sans-serif;color:#0E7167;display:inline-flex;gap:.4rem;transition:gap .3s" style-hover="gap:.8rem">Saiba mais <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+      <a href="imoveis-rurais/" data-cta="area-imoveis-rurais" style="display:flex;flex-direction:column;background:#FDFCFA;border:1px solid #E5E0D5;text-decoration:none;color:inherit;transition:border-color .35s,box-shadow .35s" style-hover="border-color:#CFC7B6;box-shadow:0 22px 50px -32px rgba(20,25,22,.45)">
+        <span style="display:block;aspect-ratio:16/11;overflow:hidden;background:#EAE5DB"><img src="assets/img/rurais-md.webp" alt="Propriedade rural com morros, áreas de cultivo e mata nativa ao amanhecer" width="1200" height="825" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.045)"></span>
+        <span style="display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.35rem 1.45rem;flex:1">
+          <span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.16em;color:#A8823C">06</span>
+          <span style="font:600 1.0625rem/1.3 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Imóveis rurais</span>
+          <span style="font:400 .9375rem/1.62 Manrope,sans-serif;color:#5A564E">Questões documentais, registrais, possessórias e dominiais próprias do imóvel rural.</span>
+          <span style="margin-top:auto;padding-top:.9rem;font:600 .8125rem/1 Manrope,sans-serif;color:#0E7167;display:inline-flex;gap:.4rem;transition:gap .3s" style-hover="gap:.8rem">Saiba mais <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+      <a href="registro-de-imoveis/" data-cta="area-registro-de-imoveis" style="display:flex;flex-direction:column;background:#FDFCFA;border:1px solid #E5E0D5;text-decoration:none;color:inherit;transition:border-color .35s,box-shadow .35s" style-hover="border-color:#CFC7B6;box-shadow:0 22px 50px -32px rgba(20,25,22,.45)">
+        <span style="display:block;aspect-ratio:16/11;overflow:hidden;background:#EAE5DB"><img src="assets/img/regularizacao-sm.webp" alt="Planta baixa, prancheta e documentos registrais sobre mesa de trabalho" width="720" height="495" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.045)"></span>
+        <span style="display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.35rem 1.45rem;flex:1">
+          <span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.16em;color:#A8823C">07</span>
+          <span style="font:600 1.0625rem/1.3 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Registro de imóveis</span>
+          <span style="font:400 .9375rem/1.62 Manrope,sans-serif;color:#5A564E">Análise e atuação diante de exigências, registros, averbações e situações registrais.</span>
+          <span style="margin-top:auto;padding-top:.9rem;font:600 .8125rem/1 Manrope,sans-serif;color:#0E7167;display:inline-flex;gap:.4rem;transition:gap .3s" style-hover="gap:.8rem">Saiba mais <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+      <a href="desapropriacao/" data-cta="area-desapropriacao" style="display:flex;flex-direction:column;background:#FDFCFA;border:1px solid #E5E0D5;text-decoration:none;color:inherit;transition:border-color .35s,box-shadow .35s" style-hover="border-color:#CFC7B6;box-shadow:0 22px 50px -32px rgba(20,25,22,.45)">
+        <span style="display:block;aspect-ratio:16/11;overflow:hidden;background:#EAE5DB"><img src="assets/img/obra-rodovia-md.webp" alt="Obra de duplicação rodoviária atravessando área rural em Santa Catarina" width="1200" height="825" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.045)"></span>
+        <span style="display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.35rem 1.45rem;flex:1">
+          <span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.16em;color:#A8823C">08</span>
+          <span style="font:600 1.0625rem/1.3 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Desapropriação</span>
+          <span style="font:400 .9375rem/1.62 Manrope,sans-serif;color:#5A564E">Defesa dos interesses patrimoniais diante de intervenções do Poder Público.</span>
+          <span style="margin-top:auto;padding-top:.9rem;font:600 .8125rem/1 Manrope,sans-serif;color:#0E7167;display:inline-flex;gap:.4rem;transition:gap .3s" style-hover="gap:.8rem">Saiba mais <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+      <a href="servidao-administrativa/" data-cta="area-servidao-administrativa" style="display:flex;flex-direction:column;background:#FDFCFA;border:1px solid #E5E0D5;text-decoration:none;color:inherit;transition:border-color .35s,box-shadow .35s" style-hover="border-color:#CFC7B6;box-shadow:0 22px 50px -32px rgba(20,25,22,.45)">
+        <span style="display:block;aspect-ratio:16/11;overflow:hidden;background:#EAE5DB"><img src="assets/img/linha-transmissao-md.webp" alt="Linha de transmissão de energia atravessando propriedade rural" width="1200" height="825" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.045)"></span>
+        <span style="display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.35rem 1.45rem;flex:1">
+          <span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.16em;color:#A8823C">09</span>
+          <span style="font:600 1.0625rem/1.3 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Servidão administrativa</span>
+          <span style="font:400 .9375rem/1.62 Manrope,sans-serif;color:#5A564E">Atuação relacionada à implantação de infraestrutura sobre imóveis particulares.</span>
+          <span style="margin-top:auto;padding-top:.9rem;font:600 .8125rem/1 Manrope,sans-serif;color:#0E7167;display:inline-flex;gap:.4rem;transition:gap .3s" style-hover="gap:.8rem">Saiba mais <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+      <a href="litigios-imobiliarios/" data-cta="area-litigios-imobiliarios" style="display:flex;flex-direction:column;background:#FDFCFA;border:1px solid #E5E0D5;text-decoration:none;color:inherit;transition:border-color .35s,box-shadow .35s" style-hover="border-color:#CFC7B6;box-shadow:0 22px 50px -32px rgba(20,25,22,.45)">
+        <span style="display:block;aspect-ratio:16/11;overflow:hidden;background:#EAE5DB"><img src="assets/img/laudo-notificacao-md.webp" alt="Notificação, plantas técnicas e levantamento aéreo sobre mesa de trabalho" width="1200" height="825" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.045)"></span>
+        <span style="display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.35rem 1.45rem;flex:1">
+          <span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.16em;color:#A8823C">10</span>
+          <span style="font:600 1.0625rem/1.3 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Litígios imobiliários</span>
+          <span style="font:400 .9375rem/1.62 Manrope,sans-serif;color:#5A564E">Atuação em conflitos judiciais e extrajudiciais envolvendo imóveis.</span>
+          <span style="margin-top:auto;padding-top:.9rem;font:600 .8125rem/1 Manrope,sans-serif;color:#0E7167;display:inline-flex;gap:.4rem;transition:gap .3s" style-hover="gap:.8rem">Saiba mais <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+      <a href="compra-e-venda-de-imoveis/" data-cta="area-compra-e-venda-de-imoveis" style="display:flex;flex-direction:column;background:#FDFCFA;border:1px solid #E5E0D5;text-decoration:none;color:inherit;transition:border-color .35s,box-shadow .35s" style-hover="border-color:#CFC7B6;box-shadow:0 22px 50px -32px rgba(20,25,22,.45)">
+        <span style="display:block;aspect-ratio:16/11;overflow:hidden;background:#EAE5DB"><img src="assets/img/contratos-sm.webp" alt="Documentos de compra e venda, chaves e maquete de residência sobre mesa" width="720" height="495" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.045)"></span>
+        <span style="display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.35rem 1.45rem;flex:1">
+          <span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.16em;color:#A8823C">11</span>
+          <span style="font:600 1.0625rem/1.3 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Compra e venda de imóveis</span>
+          <span style="font:400 .9375rem/1.62 Manrope,sans-serif;color:#5A564E">Análise jurídica da operação, da documentação, dos riscos e dos instrumentos contratuais.</span>
+          <span style="margin-top:auto;padding-top:.9rem;font:600 .8125rem/1 Manrope,sans-serif;color:#0E7167;display:inline-flex;gap:.4rem;transition:gap .3s" style-hover="gap:.8rem">Saiba mais <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+      <a href="parcelamento-do-solo/" data-cta="area-parcelamento-do-solo" style="display:flex;flex-direction:column;background:#FDFCFA;border:1px solid #E5E0D5;text-decoration:none;color:inherit;transition:border-color .35s,box-shadow .35s" style-hover="border-color:#CFC7B6;box-shadow:0 22px 50px -32px rgba(20,25,22,.45)">
+        <span style="display:block;aspect-ratio:16/11;overflow:hidden;background:#EAE5DB"><img src="assets/img/posse-sm.webp" alt="Área dividida em lotes com cercas e vias de acesso, vista aérea" width="720" height="495" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)" style-hover="transform:scale(1.045)"></span>
+        <span style="display:flex;flex-direction:column;gap:.5rem;padding:1.3rem 1.35rem 1.45rem;flex:1">
+          <span style="font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.16em;color:#A8823C">12</span>
+          <span style="font:600 1.0625rem/1.3 Manrope,sans-serif;letter-spacing:-.01em;color:#16191A">Parcelamento do solo</span>
+          <span style="font:400 .9375rem/1.62 Manrope,sans-serif;color:#5A564E">Questões jurídicas relacionadas ao parcelamento, a loteamentos e à organização imobiliária.</span>
+          <span style="margin-top:auto;padding-top:.9rem;font:600 .8125rem/1 Manrope,sans-serif;color:#0E7167;display:inline-flex;gap:.4rem;transition:gap .3s" style-hover="gap:.8rem">Saiba mais <span aria-hidden="true">→</span></span>
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="sobre" aria-labelledby="h2-sobre" style="background:#FDFCFA;border-top:1px solid #E5E0D5;padding:clamp(56px,7vw,112px) 0;scroll-margin-top:96px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4.6vw,56px);display:grid;grid-template-columns:1fr;gap:clamp(30px,4vw,64px);align-items:center" data-sobre>
+    <figure style="margin:0;position:relative;max-width:520px">
+      <img src="assets/img/gustavo-md.webp" alt="Gustavo Paris Vaccari, advogado" width="900" height="1350" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;background:#EAE5DB">
+      <span style="position:absolute;right:-1px;bottom:-1px;width:56px;height:6px;background:#A8823C"></span>
+    </figure>
+    <div>
+      <p style="margin:0;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#6E6A62">Sobre</p>
+      <h2 id="h2-sobre" style="margin:.8rem 0 0;font:500 clamp(1.8rem,3.2vw,2.7rem)/1.12 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em;color:#16191A">Gustavo Paris Vaccari</h2>
+      <p style="margin:.4rem 0 0;font:500 .875rem/1.5 Manrope,sans-serif;color:#0E7167">Advogado · Direito Imobiliário</p>
+      <p style="margin:1.4rem 0 0;font:400 1.0625rem/1.72 Manrope,sans-serif;color:#4C4941;max-width:58ch;text-wrap:pretty">Advogado com atuação dedicada ao Direito Imobiliário. O trabalho do escritório concentra-se em propriedade, posse, regularização registral, contratos imobiliários, imóveis rurais e situações envolvendo obras públicas.</p>
+      <p style="margin:1rem 0 0;font:400 1.0625rem/1.72 Manrope,sans-serif;color:#4C4941;max-width:58ch;text-wrap:pretty">Cursa pós-graduação em Direito Imobiliário. Os procedimentos são conduzidos de forma documental e, quando necessário, presencial nas serventias da situação do imóvel.</p>
+      <div style="margin-top:1.8rem;border-top:1px solid #E5E0D5;border-bottom:1px solid #E5E0D5;padding:1.15rem 0;display:flex;align-items:center;gap:.85rem">
+        <span style="display:inline-block;width:3px;height:34px;background:#1D3A31;flex:0 0 auto"></span>
+        <span style="font:600 1.0625rem/1.4 Manrope,sans-serif;color:#16191A">Atuação em todo o Estado de Santa Catarina</span>
+      </div>
+      <a href="sobre/" data-cta="sobre" style="display:inline-flex;align-items:center;gap:.5rem;margin-top:1.6rem;min-height:52px;padding:0 1.4rem;background:transparent;color:#16191A;border:1px solid #16191A;font:600 .9375rem/1 Manrope,sans-serif;text-decoration:none;transition:background .3s,color .3s" style-hover="background:#16191A;color:#F7F4EE">Conhecer o escritório</a>
+    </div>
+  </div>
+</section>
+
+<section id="como" aria-labelledby="h2-como" style="padding:clamp(56px,7vw,112px) 0;scroll-margin-top:96px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4.6vw,56px)">
+    <p style="margin:0;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#6E6A62">Como funciona</p>
+    <h2 id="h2-como" style="margin:.8rem 0 0;font:500 clamp(1.8rem,3.2vw,2.8rem)/1.12 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em;color:#16191A;max-width:26ch">Como funciona a análise do seu caso</h2>
+    <ol style="list-style:none;margin:clamp(28px,3.5vw,52px) 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:0" data-passos>
+      <li style="position:relative;padding:0 0 1.9rem 1.9rem;border-left:1px solid #DCD6CA" data-passo>
+        <span style="position:absolute;left:-5px;top:.35rem;width:9px;height:9px;background:#1D3A31;border-radius:50%"></span>
+        <span style="display:block;font:400 1.5rem/1 'Cormorant Garamond',Georgia,serif;color:#A8823C">01</span>
+        <h3 style="margin:.5rem 0 0;font:600 1.0625rem/1.35 Manrope,sans-serif;color:#16191A">Contato inicial</h3>
+        <p style="margin:.5rem 0 0;font:400 .9375rem/1.65 Manrope,sans-serif;color:#5A564E;max-width:34ch">Você descreve a situação e informa a cidade do imóvel. Não é necessário ter toda a documentação nesse momento.</p>
+      </li>
+      <li style="position:relative;padding:0 0 1.9rem 1.9rem;border-left:1px solid #DCD6CA" data-passo>
+        <span style="position:absolute;left:-5px;top:.35rem;width:9px;height:9px;background:#1D3A31;border-radius:50%"></span>
+        <span style="display:block;font:400 1.5rem/1 'Cormorant Garamond',Georgia,serif;color:#A8823C">02</span>
+        <h3 style="margin:.5rem 0 0;font:600 1.0625rem/1.35 Manrope,sans-serif;color:#16191A">Análise da situação e documentos</h3>
+        <p style="margin:.5rem 0 0;font:400 .9375rem/1.65 Manrope,sans-serif;color:#5A564E;max-width:34ch">Matrícula, contratos e documentos de posse são examinados para identificar a origem do problema.</p>
+      </li>
+      <li style="position:relative;padding:0 0 1.9rem 1.9rem;border-left:1px solid #DCD6CA" data-passo>
+        <span style="position:absolute;left:-5px;top:.35rem;width:9px;height:9px;background:#1D3A31;border-radius:50%"></span>
+        <span style="display:block;font:400 1.5rem/1 'Cormorant Garamond',Georgia,serif;color:#A8823C">03</span>
+        <h3 style="margin:.5rem 0 0;font:600 1.0625rem/1.35 Manrope,sans-serif;color:#16191A">Definição do caminho jurídico</h3>
+        <p style="margin:.5rem 0 0;font:400 .9375rem/1.65 Manrope,sans-serif;color:#5A564E;max-width:34ch">Usucapião, adjudicação, retificação, ação possessória ou outro instrumento, conforme a documentação indicar.</p>
+      </li>
+      <li style="position:relative;padding:0 0 0 1.9rem;border-left:1px solid transparent" data-passo>
+        <span style="position:absolute;left:-5px;top:.35rem;width:9px;height:9px;background:#1D3A31;border-radius:50%"></span>
+        <span style="display:block;font:400 1.5rem/1 'Cormorant Garamond',Georgia,serif;color:#A8823C">04</span>
+        <h3 style="margin:.5rem 0 0;font:600 1.0625rem/1.35 Manrope,sans-serif;color:#16191A">Condução do caso</h3>
+        <p style="margin:.5rem 0 0;font:400 .9375rem/1.65 Manrope,sans-serif;color:#5A564E;max-width:34ch">Via extrajudicial quando cabível, ou judicial quando necessário, com acompanhamento das etapas.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section aria-labelledby="h2-cta" style="background:#1D3A31;color:#EFEDE6;padding:clamp(52px,6.5vw,100px) 0">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4.6vw,56px);display:grid;grid-template-columns:1fr;gap:clamp(24px,3vw,56px);align-items:center" data-ctamid>
+    <div>
+      <p style="margin:0;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#9FBFAE">Próximo passo</p>
+      <h2 id="h2-cta" style="margin:1rem 0 0;font:500 clamp(1.7rem,2.9vw,2.5rem)/1.15 'Cormorant Garamond',Georgia,serif;color:#FBFAF6;max-width:28ch;text-wrap:pretty">Seu imóvel apresenta uma situação que precisa ser analisada?</h2>
+      <p style="margin:1rem 0 0;font:400 1.0625rem/1.7 Manrope,sans-serif;color:#D3D9D1;max-width:52ch">Descreva brevemente o que está acontecendo e informe a cidade do imóvel.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:.8rem">
+      <a href="{{ zap }}" target="_blank" rel="noopener" data-cta="cta-intermediario-whatsapp" style="display:inline-flex;align-items:center;justify-content:center;gap:.65rem;min-height:58px;padding:0 1.6rem;background:#25D366;color:#0A2216;font:700 .975rem/1 Manrope,sans-serif;text-decoration:none;transition:background .3s,transform .3s" style-hover="background:#1FBF5B;color:#0A2216;transform:translateY(-1px)">
+        <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.35-.35.52-.52.17-.18.23-.3.35-.5.11-.2.05-.37-.03-.52-.09-.15-.66-1.6-.91-2.19-.24-.57-.48-.5-.66-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9a11.82 11.82 0 0 0-3.48-8.41"/></svg>
+        Falar sobre meu imóvel
+      </a>
+      <a href="#contato" data-cta="cta-intermediario-form" style="display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 1.5rem;background:transparent;color:#EFEDE6;border:1px solid rgba(239,237,230,.45);font:600 .975rem/1 Manrope,sans-serif;text-decoration:none;transition:background .3s,color .3s,border-color .3s" style-hover="background:#EFEDE6;color:#1D3A31;border-color:#EFEDE6">Solicitar análise pelo site</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="h2-faq" style="padding:clamp(56px,7vw,112px) 0;scroll-margin-top:96px">
+  <div style="max-width:860px;margin:0 auto;padding:0 clamp(20px,4.6vw,56px)">
+    <p style="margin:0;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#6E6A62">Perguntas frequentes</p>
+    <h2 id="h2-faq" style="margin:.8rem 0 clamp(20px,2.6vw,36px);font:500 clamp(1.8rem,3.2vw,2.8rem)/1.12 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em;color:#16191A">Dúvidas iniciais</h2>
+
+    <details style="border-top:1px solid #DCD6CA">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:68px;padding:1.15rem 0;cursor:pointer;font:600 1.0625rem/1.45 Manrope,sans-serif;color:#16191A">
+        O escritório atende em todo o Estado de Santa Catarina?
+        <span data-chev aria-hidden="true" style="flex:0 0 auto;color:#0E7167;font:400 1.1rem/1 Manrope,sans-serif;transition:transform .28s">▾</span>
+      </summary>
+      <p style="margin:0 0 1.4rem;font:400 1rem/1.72 Manrope,sans-serif;color:#4C4941;max-width:64ch">Sim. A atuação abrange o Estado de Santa Catarina. Parte dos procedimentos imobiliários é conduzida de forma documental e eletrônica; outros, como a usucapião extrajudicial, tramitam no registro de imóveis da situação do bem, o que é considerado no planejamento de cada caso.</p>
+    </details>
+
+    <details style="border-top:1px solid #DCD6CA">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:68px;padding:1.15rem 0;cursor:pointer;font:600 1.0625rem/1.45 Manrope,sans-serif;color:#16191A">
+        Como começa a análise de um caso?
+        <span data-chev aria-hidden="true" style="flex:0 0 auto;color:#0E7167;font:400 1.1rem/1 Manrope,sans-serif;transition:transform .28s">▾</span>
+      </summary>
+      <p style="margin:0 0 1.4rem;font:400 1rem/1.72 Manrope,sans-serif;color:#4C4941;max-width:64ch">Pela documentação. A matrícula do imóvel e os documentos de aquisição ou de posse são o ponto de partida. A partir deles é possível identificar a origem do problema e qual instrumento se aplica.</p>
+    </details>
+
+    <details style="border-top:1px solid #DCD6CA">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:68px;padding:1.15rem 0;cursor:pointer;font:600 1.0625rem/1.45 Manrope,sans-serif;color:#16191A">
+        Vocês atendem imóveis rurais?
+        <span data-chev aria-hidden="true" style="flex:0 0 auto;color:#0E7167;font:400 1.1rem/1 Manrope,sans-serif;transition:transform .28s">▾</span>
+      </summary>
+      <p style="margin:0 0 1.4rem;font:400 1rem/1.72 Manrope,sans-serif;color:#4C4941;max-width:64ch">Sim. Imóveis rurais têm exigências próprias de descrição, cadastro e divisas, e representam parte relevante da atuação do escritório.</p>
+    </details>
+
+    <details style="border-top:1px solid #DCD6CA">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:68px;padding:1.15rem 0;cursor:pointer;font:600 1.0625rem/1.45 Manrope,sans-serif;color:#16191A">
+        Meu imóvel não tem escritura. Isso tem solução?
+        <span data-chev aria-hidden="true" style="flex:0 0 auto;color:#0E7167;font:400 1.1rem/1 Manrope,sans-serif;transition:transform .28s">▾</span>
+      </summary>
+      <p style="margin:0 0 1.4rem;font:400 1rem/1.72 Manrope,sans-serif;color:#4C4941;max-width:64ch">Na maioria das vezes, sim — mas o caminho depende da origem da situação. Imóvel comprado e pago tende a se resolver por adjudicação compulsória. Posse prolongada sem contrato costuma ser caso de usucapião. A análise documental define qual se aplica.</p>
+    </details>
+
+    <details style="border-top:1px solid #DCD6CA;border-bottom:1px solid #DCD6CA">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:68px;padding:1.15rem 0;cursor:pointer;font:600 1.0625rem/1.45 Manrope,sans-serif;color:#16191A">
+        É possível resolver sem processo judicial?
+        <span data-chev aria-hidden="true" style="flex:0 0 auto;color:#0E7167;font:400 1.1rem/1 Manrope,sans-serif;transition:transform .28s">▾</span>
+      </summary>
+      <p style="margin:0 0 1.4rem;font:400 1rem/1.72 Manrope,sans-serif;color:#4C4941;max-width:64ch">Em muitos casos, sim. Usucapião, adjudicação compulsória, retificação de área e inventário admitem via extrajudicial quando presentes os requisitos. Isso costuma reduzir prazos, mas depende da regularidade documental e da ausência de litígio.</p>
+    </details>
+  </div>
+</section>
+
+<section id="contato" aria-labelledby="h2-contato" style="background:#FDFCFA;border-top:1px solid #E5E0D5;padding:clamp(56px,7vw,112px) 0;scroll-margin-top:96px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4.6vw,56px)">
+    <p style="margin:0;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#6E6A62">Contato</p>
+    <h2 id="h2-contato" style="margin:.8rem 0 0;font:500 clamp(1.8rem,3.2vw,2.8rem)/1.12 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em;color:#16191A;max-width:26ch">Vamos analisar a situação do seu imóvel</h2>
+    <p style="margin:1rem 0 0;font:400 1.0625rem/1.7 Manrope,sans-serif;color:#4C4941;max-width:56ch">Descreva brevemente a situação e informe a cidade do imóvel.</p>
+
+    <div style="margin-top:clamp(28px,3.4vw,50px);display:grid;grid-template-columns:1fr;gap:clamp(20px,2.4vw,34px);align-items:start" data-contato>
+
+      <div style="background:#1D3A31;color:#EFEDE6;padding:clamp(24px,3vw,38px)">
+        <p style="margin:0;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#9FBFAE">Forma mais rápida</p>
+        <h3 style="margin:.9rem 0 0;font:500 clamp(1.5rem,2.3vw,2rem)/1.15 'Cormorant Garamond',Georgia,serif;color:#FBFAF6">Falar pelo WhatsApp</h3>
+        <p style="margin:.9rem 0 0;font:400 1rem/1.7 Manrope,sans-serif;color:#D3D9D1;max-width:38ch">Atendimento direto com o escritório. Você descreve o caso e recebe a orientação sobre quais documentos serão necessários.</p>
+        <a href="{{ zap }}" target="_blank" rel="noopener" data-cta="contato-whatsapp-principal" style="display:inline-flex;align-items:center;justify-content:center;gap:.65rem;width:100%;min-height:60px;margin-top:1.6rem;padding:0 1.5rem;background:#25D366;color:#0A2216;font:700 1rem/1 Manrope,sans-serif;text-decoration:none;transition:background .3s,transform .3s" style-hover="background:#1FBF5B;color:#0A2216;transform:translateY(-1px)">
+          <svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.35-.35.52-.52.17-.18.23-.3.35-.5.11-.2.05-.37-.03-.52-.09-.15-.66-1.6-.91-2.19-.24-.57-.48-.5-.66-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9a11.82 11.82 0 0 0-3.48-8.41"/></svg>
+          Falar pelo WhatsApp
+        </a>
+        <p style="margin:1.5rem 0 0;padding-top:1.3rem;border-top:1px solid rgba(239,237,230,.2);font:500 .875rem/1.6 Manrope,sans-serif;color:#BFCDC2">Vaccari Advocacia · Palhoça, Santa Catarina<br>Atuação em todo o Estado.</p>
+      </div>
+
+      <form ref="{{ refForm }}" onSubmit="{{ enviar }}" novalidate style="background:#F7F4EE;border:1px solid #E5E0D5;padding:clamp(22px,2.8vw,36px)">
+        <p style="margin:0;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#6E6A62">Ou envie pelo site</p>
+        <h3 style="margin:.8rem 0 1.4rem;font:500 clamp(1.4rem,2vw,1.8rem)/1.2 'Cormorant Garamond',Georgia,serif;color:#16191A">Solicitar análise</h3>
+        <div style="display:grid;grid-template-columns:1fr;gap:1rem" data-formgrid>
+          <label style="display:grid;gap:.45rem;font:600 .8125rem/1 Manrope,sans-serif;color:#3D3A34">Nome completo
+            <input name="Nome" type="text" autoComplete="name" placeholder="Seu nome" style="min-height:54px;padding:0 .9rem;background:#FDFCFA;border:1px solid #DCD6CA;font:400 1rem/1 Manrope,sans-serif;color:#16191A;width:100%" style-focus="border-color:#0E7167;outline:none">
+          </label>
+          <label style="display:grid;gap:.45rem;font:600 .8125rem/1 Manrope,sans-serif;color:#3D3A34">Telefone ou WhatsApp
+            <input name="Telefone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(48) 9 9999 9999" style="min-height:54px;padding:0 .9rem;background:#FDFCFA;border:1px solid #DCD6CA;font:400 1rem/1 Manrope,sans-serif;color:#16191A;width:100%" style-focus="border-color:#0E7167;outline:none">
+          </label>
+          <label style="display:grid;gap:.45rem;font:600 .8125rem/1 Manrope,sans-serif;color:#3D3A34">E-mail
+            <input name="E-mail" type="email" autoComplete="email" placeholder="voce@email.com" style="min-height:54px;padding:0 .9rem;background:#FDFCFA;border:1px solid #DCD6CA;font:400 1rem/1 Manrope,sans-serif;color:#16191A;width:100%" style-focus="border-color:#0E7167;outline:none">
+          </label>
+          <label style="display:grid;gap:.45rem;font:600 .8125rem/1 Manrope,sans-serif;color:#3D3A34">Cidade do imóvel
+            <input name="Cidade do imóvel" type="text" placeholder="Cidade" style="min-height:54px;padding:0 .9rem;background:#FDFCFA;border:1px solid #DCD6CA;font:400 1rem/1 Manrope,sans-serif;color:#16191A;width:100%" style-focus="border-color:#0E7167;outline:none">
+          </label>
+          <label style="display:grid;gap:.45rem;font:600 .8125rem/1 Manrope,sans-serif;color:#3D3A34">Tipo de imóvel
+            <select name="Tipo de imóvel" style="min-height:54px;padding:0 .9rem;background:#FDFCFA;border:1px solid #DCD6CA;font:400 1rem/1 Manrope,sans-serif;color:#16191A;width:100%" style-focus="border-color:#0E7167;outline:none">
+              <option>Urbano</option>
+              <option>Rural</option>
+              <option>Ainda não sei</option>
+            </select>
+          </label>
+          <label style="display:grid;gap:.45rem;font:600 .8125rem/1 Manrope,sans-serif;color:#3D3A34">Situação
+            <select name="Situação" style="min-height:54px;padding:0 .9rem;background:#FDFCFA;border:1px solid #DCD6CA;font:400 1rem/1 Manrope,sans-serif;color:#16191A;width:100%" style-focus="border-color:#0E7167;outline:none">
+              <option value="">Selecione</option>
+              <option>Usucapião</option>
+              <option>Regularização de imóveis</option>
+              <option>Adjudicação compulsória</option>
+              <option>Contratos imobiliários</option>
+              <option>Posse e propriedade</option>
+              <option>Imóveis rurais</option>
+              <option>Desapropriação</option>
+              <option>Servidão administrativa</option>
+              <option>Registro de imóveis</option>
+              <option>Compra e venda de imóveis</option>
+              <option>Parcelamento do solo</option>
+              <option>Litígios imobiliários</option>
+              <option>Outra situação</option>
+            </select>
+          </label>
+        </div>
+        <label style="display:grid;gap:.45rem;margin-top:1rem;font:600 .8125rem/1 Manrope,sans-serif;color:#3D3A34">Mensagem
+          <textarea name="Mensagem" rows="4" placeholder="Descreva brevemente a situação do imóvel" style="padding:.8rem .9rem;background:#FDFCFA;border:1px solid #DCD6CA;font:400 1rem/1.6 Manrope,sans-serif;color:#16191A;width:100%;resize:vertical" style-focus="border-color:#0E7167;outline:none"></textarea>
+        </label>
+        <button type="submit" disabled="{{ enviando }}" style="display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:58px;margin-top:1.3rem;padding:0 1.5rem;background:#16191A;color:#F7F4EE;border:0;font:600 .975rem/1 Manrope,sans-serif;cursor:pointer;transition:background .3s" style-hover="background:#1D3A31">Enviar mensagem</button>
+        <sc-if value="{{ temStatus }}" hint-placeholder-val="{{ false }}">
+          <p role="status" style="margin:1rem 0 0;font:500 .9375rem/1.6 Manrope,sans-serif;color:#3D3A34">{{ status }}</p>
+        </sc-if>
+        <p style="margin:1rem 0 0;font:400 .8125rem/1.6 Manrope,sans-serif;color:#7A7468">Informe pelo menos um contato: telefone/WhatsApp ou e-mail. Os dados são usados apenas para retorno sobre a sua consulta.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#14181A;color:#9C9890;padding:clamp(48px,6vw,84px) 0 calc(28px + env(safe-area-inset-bottom))">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4.6vw,56px)">
+    <div style="display:grid;grid-template-columns:1fr;gap:clamp(28px,3vw,44px)" data-rod>
+      <div>
+        <img src="assets/img/logo-claro.png" alt="Vaccari Advocacia — Direito Imobiliário" width="1000" height="297" loading="lazy" style="height:46px;width:auto;display:block">
+        <p style="margin:1.1rem 0 0;font:400 .875rem/1.7 Manrope,sans-serif;color:#9C9890;max-width:30ch">Direito Imobiliário.<br>Atuação em todo o Estado de Santa Catarina.</p>
+        <a href="{{ zap }}" target="_blank" rel="noopener" data-cta="rodape-whatsapp" style="display:inline-flex;align-items:center;gap:.55rem;margin-top:1.2rem;min-height:46px;font:600 .875rem/1 Manrope,sans-serif;color:#7FD6A2;text-decoration:none" style-hover="color:#25D366">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.35-.35.52-.52.17-.18.23-.3.35-.5.11-.2.05-.37-.03-.52-.09-.15-.66-1.6-.91-2.19-.24-.57-.48-.5-.66-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9a11.82 11.82 0 0 0-3.48-8.41"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+      <div>
+        <h5 style="margin:0 0 .9rem;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#E7E3DA">Propriedade e posse</h5>
+        <ul style="list-style:none;margin:0;padding:0;display:grid;gap:.6rem">
+          <li><a href="usucapiao/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Usucapião</a></li>
+          <li><a href="posse-e-propriedade/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Posse e propriedade</a></li>
+          <li><a href="regularizacao-de-imoveis/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Regularização de imóveis</a></li>
+          <li><a href="registro-de-imoveis/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Registro de imóveis</a></li>
+          <li><a href="adjudicacao-compulsoria/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Adjudicação compulsória</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 style="margin:0 0 .9rem;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#E7E3DA">Negócios imobiliários</h5>
+        <ul style="list-style:none;margin:0;padding:0;display:grid;gap:.6rem">
+          <li><a href="contratos-imobiliarios/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Contratos imobiliários</a></li>
+          <li><a href="compra-e-venda-de-imoveis/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Compra e venda de imóveis</a></li>
+          <li><a href="parcelamento-do-solo/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Parcelamento do solo</a></li>
+          <li><a href="imoveis-rurais/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Imóveis rurais</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 style="margin:0 0 .9rem;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#E7E3DA">Obras e conflitos</h5>
+        <ul style="list-style:none;margin:0;padding:0;display:grid;gap:.6rem">
+          <li><a href="desapropriacao/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Desapropriação</a></li>
+          <li><a href="servidao-administrativa/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Servidão administrativa</a></li>
+          <li><a href="litigios-imobiliarios/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Litígios imobiliários</a></li>
+          <li><a href="direito-imobiliario/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Todas as áreas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 style="margin:0 0 .9rem;font:600 .6875rem/1 Manrope,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#E7E3DA">Escritório</h5>
+        <ul style="list-style:none;margin:0;padding:0;display:grid;gap:.6rem">
+          <li><a href="sobre/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Sobre</a></li>
+          <li><a href="contato/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Contato</a></li>
+          <li><a href="politica-de-privacidade/" style="font:400 .9rem/1.5 Manrope,sans-serif;color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Política de privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin:clamp(30px,3.6vw,54px) 0 0;padding-top:1.5rem;border-top:1px solid #262B2C;font:400 .8125rem/1.7 Manrope,sans-serif;color:#7C7973;max-width:96ch">Este site tem caráter informativo e institucional, nos termos do Provimento 205/2021 do Conselho Federal da OAB. As informações aqui reunidas não substituem a análise de um caso concreto, que depende do exame da documentação específica do imóvel. Nenhum conteúdo desta página constitui promessa de resultado.</p>
+    <div style="margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font:400 .8125rem/1.6 Manrope,sans-serif;color:#7C7973">
+      <span>Vaccari Advocacia · Palhoça, Santa Catarina</span>
+      <span><a href="politica-de-privacidade/" style="color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Política de privacidade</a> · <a href="contato/" style="color:#9C9890;text-decoration:none" style-hover="color:#F2EFE8">Contato</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="{{ zap }}" target="_blank" rel="noopener" data-cta="botao-flutuante" aria-label="Falar no WhatsApp com o escritório" style="position:fixed;right:clamp(16px,2.4vw,28px);bottom:calc(clamp(16px,2.4vw,28px) + env(safe-area-inset-bottom));z-index:120;display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;background:#25D366;color:#fff;text-decoration:none;box-shadow:0 10px 30px -8px rgba(11,60,36,.45);animation:pulsoZap 4.5s ease-out infinite;transition:transform .3s,background .3s" style-hover="transform:scale(1.06);background:#1FBF5B;color:#fff">
+  <svg viewBox="0 0 24 24" width="31" height="31" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.35-.35.52-.52.17-.18.23-.3.35-.5.11-.2.05-.37-.03-.52-.09-.15-.66-1.6-.91-2.19-.24-.57-.48-.5-.66-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9a11.82 11.82 0 0 0-3.48-8.41"/></svg>
+</a>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;whatsappNumero&quot;: {
+    &quot;editor&quot;: &quot;text&quot;,
+    &quot;default&quot;: &quot;5548998398989&quot;,
+    &quot;tsType&quot;: &quot;string&quot;,
+    &quot;section&quot;: &quot;WhatsApp&quot;
+  },
+  &quot;whatsappMensagem&quot;: {
+    &quot;editor&quot;: &quot;text&quot;,
+    &quot;default&quot;: &quot;Olá, Dr. Gustavo. Gostaria de falar sobre meu imóvel e entender as possibilidades jurídicas.&quot;,
+    &quot;tsType&quot;: &quot;string&quot;,
+    &quot;section&quot;: &quot;WhatsApp&quot;
+  },
+  &quot;heroImagem&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;options&quot;: [&quot;Residência contemporânea&quot;, &quot;Propriedade rural&quot;, &quot;Rua residencial&quot;, &quot;Plantas e documentos&quot;],
+    &quot;default&quot;: &quot;Residência contemporânea&quot;,
+    &quot;tsType&quot;: &quot;string&quot;,
+    &quot;section&quot;: &quot;Hero&quot;
+  }
+}">
+class Component extends DCLogic {
+  state = { status: "", enviando: false };
+
+  refCab = React.createRef();
+  refLogo = React.createRef();
+  refBtn = React.createRef();
+  refGav = React.createRef();
+  refVeu = React.createRef();
+  refForm = React.createRef();
+
+  FOTOS = {
+    "Residência contemporânea": "assets/img/adjudicacao.webp",
+    "Propriedade rural": "assets/img/rurais.webp",
+    "Rua residencial": "assets/img/usucapiao.webp",
+    "Plantas e documentos": "assets/img/regularizacao.webp"
+  };
+
+  componentDidMount() {
+    this.aplicar();
+    this.scroll();
+    this.rastrear();
+    window.addEventListener("scroll", this.scroll, { passive: true });
+    window.addEventListener("resize", this.aoRedimensionar, { passive: true });
+    document.addEventListener("keydown", this.tecla);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.scroll);
+    window.removeEventListener("resize", this.aoRedimensionar);
+    document.removeEventListener("keydown", this.tecla);
+  }
+
+  aoRedimensionar = () => {
+    if (this.rafId) cancelAnimationFrame(this.rafId);
+    this.rafId = requestAnimationFrame(this.aplicar);
+  };
+
+  /* ── Responsividade: um único cálculo por largura, aplicado em estilos inline ── */
+  aplicar = () => {
+    const w = document.documentElement.clientWidth || window.innerWidth;
+    const q = (s) => Array.prototype.slice.call(document.querySelectorAll(s));
+    const set = (sel, prop, val) => q(sel).forEach(e => { e.style[prop] = val; });
+
+    const largo = w >= 900;
+    set("[data-nav-d]", "display", largo ? "flex" : "none");
+    set("[data-ham]", "display", largo ? "none" : "flex");
+    set("[data-hero]", "gridTemplateColumns", largo ? "1.06fr .94fr" : "1fr");
+    set("[data-pos]", "gridTemplateColumns", largo ? ".95fr 1.05fr" : "1fr");
+    set("[data-sobre]", "gridTemplateColumns", largo ? ".8fr 1.2fr" : "1fr");
+    set("[data-ctamid]", "gridTemplateColumns", largo ? "1.2fr .8fr" : "1fr");
+    set("[data-contato]", "gridTemplateColumns", largo ? ".82fr 1.18fr" : "1fr");
+
+    set("[data-passos]", "gridTemplateColumns", largo ? "repeat(4,minmax(0,1fr))" : "1fr");
+    q("[data-passo]").forEach((e, i) => {
+      if (largo) {
+        e.style.borderLeft = "0";
+        e.style.borderTop = "1px solid #DCD6CA";
+        e.style.padding = "1.6rem 1.6rem 0 0";
+      } else {
+        e.style.borderTop = "0";
+        e.style.borderLeft = i === 3 ? "1px solid transparent" : "1px solid #DCD6CA";
+        e.style.padding = i === 3 ? "0 0 0 1.9rem" : "0 0 1.9rem 1.9rem";
+      }
+      const p = e.firstElementChild;
+      if (p) { p.style.left = largo ? "0" : "-5px"; p.style.top = largo ? "-5px" : ".35rem"; }
+    });
+
+    const colsAreas = w >= 1560 ? 4 : w >= 1040 ? 3 : w >= 640 ? 2 : 1;
+    set("[data-areas]", "gridTemplateColumns", "repeat(" + colsAreas + ",minmax(0,1fr))");
+    const duas = w >= 640 ? "repeat(2,minmax(0,1fr))" : "1fr";
+    set("[data-sit]", "gridTemplateColumns", duas);
+    set("[data-formgrid]", "gridTemplateColumns", duas);
+    set("[data-rod]", "gridTemplateColumns", w >= 1040 ? "1.45fr 1fr 1fr 1fr 1fr" : duas);
+  };
+
+  scroll = () => {
+    const c = this.refCab.current, l = this.refLogo.current;
+    if (!c) return;
+    const desceu = window.scrollY > 40;
+    c.style.padding = desceu ? "10px clamp(20px,4.6vw,56px)" : "";
+    const inner = c.firstElementChild;
+    if (inner) inner.style.padding = desceu ? "11px clamp(20px,4.6vw,56px)" : "18px clamp(20px,4.6vw,56px)";
+    if (l) l.style.height = desceu ? "clamp(28px,3.2vw,34px)" : "clamp(34px,4.2vw,44px)";
+    c.style.boxShadow = desceu ? "0 12px 30px -26px rgba(20,25,22,.6)" : "none";
+  };
+
+  tecla = (e) => { if (e.key === "Escape") this.fecharMenu(); };
+
+  abrirMenu = () => {
+    const g = this.refGav.current, v = this.refVeu.current, b = this.refBtn.current;
+    if (!g) return;
+    g.style.visibility = "visible";
+    g.style.transform = "translateX(0)";
+    if (v) { v.style.opacity = "1"; v.style.pointerEvents = "auto"; }
+    if (b) b.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+    const a = g.querySelector("a");
+    if (a) setTimeout(() => a.focus(), 120);
+  };
+
+  fecharMenu = () => {
+    const g = this.refGav.current, v = this.refVeu.current, b = this.refBtn.current;
+    if (!g) return;
+    g.style.transform = "translateX(100%)";
+    g.style.visibility = "hidden";
+    if (v) { v.style.opacity = "0"; v.style.pointerEvents = "none"; }
+    if (b) b.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  };
+
+  /* ── Eventos de conversão (GA4 / dataLayer) ── */
+  ev = (nome, extra) => {
+    const d = Object.assign({ area: "home", pagina: location.pathname }, extra || {});
+    if (typeof window.gtag === "function") window.gtag("event", nome, d);
+    (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: nome }, d));
+  };
+
+  rastrear = () => {
+    document.addEventListener("click", (e) => {
+      const el = e.target.closest ? e.target.closest("[data-cta]") : null;
+      if (!el) return;
+      const href = el.getAttribute("href") || "";
+      this.ev("cta_clique", { cta: el.dataset.cta, destino: href });
+      if (href.indexOf("wa.me") > -1) this.ev("contato_whatsapp", { origem: el.dataset.cta });
+    });
+  };
+
+  /* ── Formulário: FormSubmit (mesmo endpoint do site atual) ── */
+  enviar = (e) => {
+    e.preventDefault();
+    const f = this.refForm.current;
+    if (!f) return;
+    const dados = Object.fromEntries(new FormData(f).entries());
+    const tel = (dados["Telefone"] || "").trim();
+    const mail = (dados["E-mail"] || "").trim();
+    if (!tel && !mail) {
+      this.setState({ status: "Informe pelo menos um contato: telefone/WhatsApp ou e-mail." });
+      return;
+    }
+    this.setState({ enviando: true, status: "Enviando suas informações…" });
+    const destino = "gustavoparisvaccari" + "@" + "gmail.com";
+    fetch("https://formsubmit.co/ajax/" + destino, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(Object.assign({}, dados, {
+        _subject: "Novo contato pelo site — " + (dados["Nome"] || "Sem nome"),
+        _template: "table",
+        _captcha: "false",
+        "Página": location.pathname
+      }))
+    })
+      .then(r => { if (!r.ok) throw new Error("falha"); return r.json(); })
+      .then(() => {
+        f.reset();
+        this.setState({ enviando: false, status: "Mensagem enviada. Você receberá um retorno em breve." });
+        this.ev("formulario_envio", { area_form: dados["Situação"] || "" });
+      })
+      .catch(() => {
+        this.setState({ enviando: false, status: "Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp." });
+      });
+  };
+
+  renderVals() {
+    const numero = (this.props.whatsappNumero || "5548998398989").replace(/\D/g, "");
+    const msg = this.props.whatsappMensagem || "Olá, Dr. Gustavo. Gostaria de falar sobre meu imóvel e entender as possibilidades jurídicas.";
+    const escolha = this.props.heroImagem || "Residência contemporânea";
+    return {
+      zap: "https://wa.me/" + numero + "?text=" + encodeURIComponent(msg),
+      heroSrc: this.FOTOS[escolha] || this.FOTOS["Residência contemporânea"],
+      status: this.state.status,
+      temStatus: !!this.state.status,
+      enviando: this.state.enviando,
+      abrirMenu: this.abrirMenu,
+      fecharMenu: this.fecharMenu,
+      enviar: this.enviar,
+      refCab: this.refCab,
+      refLogo: this.refLogo,
+      refBtn: this.refBtn,
+      refGav: this.refGav,
+      refVeu: this.refVeu,
+      refForm: this.refForm
+    };
+  }
+}
+
+</script>
+</body>
+</html>
